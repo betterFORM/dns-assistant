@@ -1,0 +1,21 @@
+{
+  "name": "existdb.org",
+  "version": "0.0.0",
+  "authors": [
+    "JoernT <joern.turner@betterform.de>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": ">= 3.3.4",
+    "animate.css": ">= 3.2.6",
+    "admin-lte": "~2.1.1",
+    "font-awesome": "~4.3.0"
+  }
+}
