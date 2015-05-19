@@ -1,0 +1,53 @@
+<html><head/><body>
+
+<form action="XXX">
+
+<p>
+Edit DNS Record
+</p>
+
+<p>
+Record Type.  For a reverse DNS zone, the only allowed type is "PTR". For a "normal" (forward) zone, it may be one of:
+</p>
+
+<select name="type">
+  <option>A</option>
+  <option>AAAA</option>
+  <option>CNAME</option>
+  <option>NS</option>
+  <option>MX</option>
+  <option>SRV</option>
+  <option>TXT</option>
+  <option>SPF</option>
+</select>
+
+<p>
+Record name is a DNS name such as "www" or "ftp.albocha.de".
+</p>
+
+<p>Record Name: <input type="text" name="name"/></p>
+
+<p>
+Record Value depends on the record type. For "A" it is an IPv4 address, for "AAAA" it is an IPv6 address. For "CNAME" it is a DNS name.  For "NS" and "MX" it can bei an IPv4 or IPv6 address or a DNS name. For "TXT" and "SPF" it is an arbitrary string. "SRV" is a bit special.
+</p>
+
+<p>Record Value: <input type="text" name="value"/></p>
+
+<p>The MX prio text input field should only be displayed if the "Record type" is MX. Value must be a positive integer.</p>
+
+<p>MX priority: <input type="text" name="mxprio"/></p>
+
+<p>The TTL text input field should be greyed out unless "Custom TTL" is chosen. Value must be a positive integer (seconds). Might also be a select with discrete values like "5min", "1h".</p>
+
+<p>
+<input type="radio" name="defttl" value="Default TTL"/>
+<input type="radio" name="customttl" value="Custom TTL"/>
+<br/>
+TTL: <input type="text" name="name"/>
+</p>
+
+
+<button type="submit" name="action" value="new-rr">Add new DNS resource record</button>
+
+</form>
+</body></html>

@@ -1,0 +1,2835 @@
+# $Id: zones,v 1.244 2015/03/25 08:39:04 azettl Exp $
+
+#==============================================================================
+#
+# 	Zonen Definitionen e.discom (frueher Teil der named.conf)
+#
+#==============================================================================
+
+
+### REVERSE ZONEN -------------------------------------------------------------
+
+// Start Reverse Zonen fuer Adressblock 212.204.32.0/19
+
+zone "63.204.212.in-addr.arpa" { type master; file "master/db.212.204.63"; };
+zone "62.204.212.in-addr.arpa" { type master; file "master/db.212.204.62"; };
+zone "61.204.212.in-addr.arpa" { type master; file "master/db.212.204.61"; };
+//zone "60.204.212.in-addr.arpa" { type master; file "master/db.212.204.60"; };
+zone "59.204.212.in-addr.arpa" { type master; file "master/db.212.204.59"; };
+//
+zone "57.204.212.in-addr.arpa" { type master; file "master/db.212.204.57"; };
+zone "56.204.212.in-addr.arpa" { type master; file "master/db.212.204.56"; };
+zone "55.204.212.in-addr.arpa" { type master; file "master/db.212.204.55"; };
+zone "54.204.212.in-addr.arpa" { type master; file "master/db.212.204.54"; };
+zone "53.204.212.in-addr.arpa" { type master; file "master/db.212.204.53"; };
+zone "52.204.212.in-addr.arpa" { type master; file "master/db.212.204.52"; };
+zone "51.204.212.in-addr.arpa" { type master; file "master/db.212.204.51"; };
+zone "50.204.212.in-addr.arpa" { type master; file "master/db.212.204.50"; };
+zone "49.204.212.in-addr.arpa" { type master; file "master/db.212.204.49"; };
+zone "48.204.212.in-addr.arpa" { type master; file "master/db.212.204.48"; };
+zone "46.204.212.in-addr.arpa" { type master; file "master/db.212.204.46"; };
+zone "47.204.212.in-addr.arpa" { type master; file "master/db.212.204.47"; };
+zone "44.204.212.in-addr.arpa" { type master; file "master/db.212.204.44"; };
+zone "43.204.212.in-addr.arpa" { type master; file "master/db.212.204.43"; };
+zone "42.204.212.in-addr.arpa" { type master; file "master/db.212.204.42"; };
+zone "41.204.212.in-addr.arpa" { type master; file "master/db.212.204.41"; };
+zone "40.204.212.in-addr.arpa" { type master; file "master/db.212.204.40"; };
+zone "39.204.212.in-addr.arpa" { type master; file "master/db.212.204.39"; };
+// zone "38.204.212.in-addr.arpa" { type master; file "master/db.212.204.38"; }; //zust. 212.204.38.24 und 212.204.38.34 (mhr.de)
+zone "37.204.212.in-addr.arpa" { type master; file "master/db.212.204.37"; };
+zone "36.204.212.in-addr.arpa" { type master; file "master/db.212.204.36"; };
+zone "35.204.212.in-addr.arpa" { type master; file "master/db.212.204.35"; };
+zone "34.204.212.in-addr.arpa" { type master; file "master/db.212.204.34"; };
+Zone "33.204.212.in-addr.arpa" { type master; file "master/db.212.204.33"; };
+Zone "32.204.212.in-addr.arpa" { type master; file "master/db.212.204.32"; };
+
+// Ende Reverse Zonen fuer Adressblock 212.204.32.0/19
+
+
+// Start Reverse Zonen fuer Adressblock 82.193.224.0/19
+
+zone "224.193.82.in-addr.arpa" { type master; file "master/db.82.193.224"; };
+zone "225.193.82.in-addr.arpa" { type master; file "master/db.82.193.225"; };
+zone "226.193.82.in-addr.arpa" { type master; file "master/db.82.193.226"; };
+zone "227.193.82.in-addr.arpa" { type master; file "master/db.82.193.227"; };
+zone "228.193.82.in-addr.arpa" { type master; file "master/db.82.193.228"; };
+zone "229.193.82.in-addr.arpa" { type master; file "master/db.82.193.229"; };
+zone "230.193.82.in-addr.arpa" { type master; file "master/db.82.193.230"; };
+zone "231.193.82.in-addr.arpa" { type master; file "master/db.82.193.231"; };
+zone "235.193.82.in-addr.arpa" { type master; file "master/db.82.193.235"; };
+zone "236.193.82.in-addr.arpa" { type master; file "master/db.82.193.236"; };
+zone "237.193.82.in-addr.arpa" { type master; file "master/db.82.193.237"; };
+zone "240.193.82.in-addr.arpa" { type master; file "master/db.82.193.240"; };
+zone "241.193.82.in-addr.arpa" { type master; file "master/db.82.193.241"; };
+zone "242.193.82.in-addr.arpa" { type master; file "master/db.82.193.242"; };
+zone "244.193.82.in-addr.arpa" { type master; file "master/db.82.193.244"; };
+zone "245.193.82.in-addr.arpa" { type master; file "master/db.82.193.245"; };
+zone "246.193.82.in-addr.arpa" { type master; file "master/db.82.193.246"; };
+zone "247.193.82.in-addr.arpa" { type master; file "master/db.82.193.247"; };
+zone "248.193.82.in-addr.arpa" { type master; file "master/db.82.193.248"; };
+zone "249.193.82.in-addr.arpa" { type master; file "master/db.82.193.249"; };
+zone "251.193.82.in-addr.arpa" { type master; file "master/db.82.193.251"; };
+// zone "252.193.82.in-addr.arpa" { type master; file "master/db.82.193.252"; };
+// zone "253.193.82.in-addr.arpa" { type master; file "master/db.82.193.253"; };
+// zone "254.193.82.in-addr.arpa" { type master; file "master/db.82.193.254"; };
+// zone "255.193.82.in-addr.arpa" { type master; file "master/db.82.193.255"; };
+
+
+// Ende Reverse Zonen fuer Adressblock 82.193.224.0/19
+
+
+// Start Reverse Zonen fuer Adressblock 85.199.64.0/18
+
+// zone "64.199.85.in-addr.arpa" { type master; file "master/db.85.199.64"; };
+// zone "65.199.85.in-addr.arpa" { type master; file "master/db.85.199.65"; };
+// zone "66.199.85.in-addr.arpa" { type master; file "master/db.85.199.66"; };
+// zone "67.199.85.in-addr.arpa" { type master; file "master/db.85.199.67"; };
+zone "68.199.85.in-addr.arpa" { type master; file "master/db.85.199.68"; };
+zone "69.199.85.in-addr.arpa" { type master; file "master/db.85.199.69"; };
+zone "70.199.85.in-addr.arpa" { type master; file "master/db.85.199.70"; };
+zone "71.199.85.in-addr.arpa" { type master; file "master/db.85.199.71"; };
+// zone "72.199.85.in-addr.arpa" { type master; file "master/db.85.199.72"; }; //zustaendige DNS ns1.dov.net u. ns2.dov.net (ARCHE)
+// zone "73.199.85.in-addr.arpa" { type master; file "master/db.85.199.72"; }; //zustaendige DNS ns1.dov.net u. ns2.dov.net (ARCHE)
+zone "75.199.85.in-addr.arpa" { type master; file "master/db.85.199.75"; };
+zone "76.199.85.in-addr.arpa" { type master; file "master/db.85.199.76"; };
+// zone "84.199.85.in-addr.arpa" { type master; file "master/db.85.199.84"; }; //zustaendig ns.data-experts.de 85.199.84.2
+zone "85.199.85.in-addr.arpa" { type master; file "master/db.85.199.85"; };
+zone "86.199.85.in-addr.arpa" { type master; file "master/db.85.199.86"; };
+zone "87.199.85.in-addr.arpa" { type master; file "master/db.85.199.87"; };
+zone "88.199.85.in-addr.arpa" { type master; file "master/db.85.199.88"; };
+zone "89.199.85.in-addr.arpa" { type master; file "master/db.85.199.89"; };
+zone "90.199.85.in-addr.arpa" { type master; file "master/db.85.199.90"; };
+zone "91.199.85.in-addr.arpa" { type master; file "master/db.85.199.91"; };
+zone "112.199.85.in-addr.arpa" { type master; file "master/db.85.199.112"; };
+zone "116.199.85.in-addr.arpa" { type master; file "master/db.85.199.116"; };
+zone "117.199.85.in-addr.arpa" { type master; file "master/db.85.199.117"; };
+
+// Ende Reverse Zonen fuer Adressblock 85.199.64.0/18
+
+
+// Start Reverse Zonen fuer e.discom IPv6 Adressblock 2a01:a380/32
+
+// 2a01:a380:f4::/48   Servernetz Grossbeeren
+zone "4.f.0.0.0.8.3.a.1.0.a.2.ip6.arpa" { type master; file "master/db.2a01:a380:f4"; };
+
+// 2a01:a380:f8::/48   Servernetz Rostock
+zone "8.f.0.0.0.8.3.a.1.0.a.2.ip6.arpa" { type master; file "master/db.2a01:a380:f8"; };
+
+//  2a01:a380:4408::/48 Kundennetz Bytecamp Brandenburg
+//zone "8.0.4.4.0.8.3.a.1.0.a.2.ip6.arpa" { type master; file "master/db.2a01:a380:4408"; };
+
+
+// Ende Reverse Zonen fuer e.discom IPv6 Adressblock 2a01:a380/32
+
+
+### SECONDARY DOMAINS ---------------------------------------------------------
+
+// Start Domains mit primaeren Nameserver 82.193.249.20 (ehemals 145.253.160.190) (MOZ)
+
+// secondary fuer classless reverse delegations MOZ
+zone "0-127.249.193.82.in-addr.arpa" {
+       type slave;
+       file "slave/0-127.249.193.82.in-addr.arpa";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "moz.de" {
+       type slave ;
+        file "slave/db.moz.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "moz-online.de" {
+       type slave ;
+        file "slave/db.moz-online.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "medien-dienstleistungen.de" {
+       type slave ;
+        file "slave/db.medien-dienstleistungen.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "maerkischer-sonntag.de" {
+       type slave ;
+        file "slave/db.maerkischer-sonntag.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "markt-brandenburg.de" {
+       type slave ;
+        file "slave/db.markt-brandenburg.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "markt-brandenburg.com" {
+       type slave ;
+        file "slave/db.markt-brandenburg.com";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "marktbrandenburg.com" {
+       type slave ;
+        file "slave/db.marktbrandenburg.com";
+       masters {
+               82.193.249.20;
+       };
+};
+
+//zone "gmd-service.de" {
+//       type slave ;
+//        file "slave/db.gmd-service.de";
+//       masters {
+//               82.193.249.20;
+//       };
+//};
+
+zone "mmh-service.de" {
+       type slave ;
+        file "slave/db.mmh-service.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "maerkische-post.de" {
+       type slave ;
+        file "slave/db.maerkische-post.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "oranienburger-generalanzeiger.de" {
+       type slave ;
+        file "slave/db.oranienburger-generalanzeiger.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "druckhaus-oberhavel.de" {
+       type slave ;
+        file "slave/db.druckhaus-oberhavel.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "die-mark-online.de" {
+       type slave ;
+        file "slave/db.die-mark-online.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "diemarkonline.de" {
+       type slave ;
+        file "slave/db.diemarkonline.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "o-g-a.de" {
+       type slave ;
+        file "slave/db.o-g-a.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "brawo.de" {
+       type slave ;
+        file "slave/db.brawo.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "maerker-online.de" {
+       type slave ;
+        file "slave/db.maerker-online.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "ruppiner-anzeiger.de" {
+       type slave ;
+        file "slave/db.ruppiner-anzeiger.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "gransee-zeitung.de" {
+       type slave ;
+        file "slave/db.gransee-zeitung.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "hennigsdorfer-generalanzeiger.de" {
+       type slave ;
+        file "slave/db.hennigsdorfer-generalanzeiger.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "blitzmaerker.de" {
+       type slave ;
+        file "slave/db.blitzmaerker.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "brandenburg-plaza.de" {
+       type slave ;
+        file "slave/db.brandenburg-plaza.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "brandenburgplaza.de" {
+       type slave ;
+        file "slave/db.brandenburgplaza.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "havelnews.de" {
+       type slave ;
+        file "slave/db.havelnews.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "havel-news.de" {
+       type slave ;
+        file "slave/db.havel-news.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "havelonline.de" {
+       type slave ;
+        file "slave/db.havelonline.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "mein-freistil.de" {
+       type slave ;
+        file "slave/db.mein-freistil.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "meinfreistil.de" {
+       type slave ;
+        file "slave/db.meinfreistil.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "oberhavel-anzeiger.de" {
+       type slave ;
+        file "slave/db.oberhavel-anzeiger.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "oberhavel-echo.de" {
+       type slave ;
+        file "slave/db.oberhavel-echo.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "oberhavel-kurier.de" {
+       type slave ;
+        file "slave/db.oberhavel-kurier.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "oberhavel-nachrichten.de" {
+       type slave ;
+        file "slave/db.oberhavel-nachrichten.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "oberhavel-rundschau.de" {
+       type slave ;
+        file "slave/db.oberhavel-rundschau.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "oberhavel-tageblatt.de" {
+       type slave ;
+        file "slave/db.oberhavel-tageblatt.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "oberhavel-zeitung.de" {
+       type slave ;
+        file "slave/db.oberhavel-zeitung.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+//zone "mmh-media.com" {
+//       type slave ;
+//        file "slave/mmh-media.com";
+//       masters {
+//               82.193.249.20;
+//       };
+//};
+
+//zone "mmhmedia.com" {
+//       type slave ;
+//        file "slave/mmhmedia.com";
+//       masters {
+//               82.193.249.20;
+//       };
+//};
+
+zone "mmhmediavermarktung.de" {
+       type slave ;
+        file "slave/mmhmediavermarktung.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "mmh-mediavermarktung.de" {
+       type slave ;
+        file "slave/mmh-mediavermarktung.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "mmh-media-vermarktung.de" {
+       type slave ;
+        file "slave/mmh-media-vermarktung.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "mmh-mv.de" {
+       type slave ;
+        file "slave/mmh-mv.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+zone "mmhmv.de" {
+       type slave ;
+        file "slave/mmhmv.de";
+       masters {
+               82.193.249.20;
+       };
+};
+
+
+// Ende Domains mit primaeren Nameserver 82.193.249.20 (MOZ)
+
+
+
+// Start Domains mit primaeren Nameserver 212.204.38.24 (mhr.de MedienHaus Rostock GmbH)
+
+zone "38.204.212.in-addr.arpa" {
+        type slave;
+        file "slave/db.38.204.212.in-addr.arpa";
+        masters {
+                212.204.38.24;
+        };
+};
+
+// Ende Domains mit primaeren Nameserver 212.204.38.24 (mhr.de MedienHaus Rostock GmbH)
+
+
+// Start Domains mit primaeren Nameserver 217.89.48.50 (Stadtwerke Oranienburg)
+
+zone "45.204.212.in-addr.arpa" {
+        type slave;
+        file "slave/db.45.204.212.in-addr.arpa";
+        masters {
+                212.204.45.210;
+        };
+};
+
+// Ende Domains mit primaeren Nameserver 217.89.48.50 (Stadtwerke Oranienburg)
+
+
+// Start Domains mit primaeren Nameserver 82.193.253.30 (Medecom Rostock)
+
+zone "252.193.82.in-addr.arpa" {
+        type slave;
+        file "slave/db.252.193.82.in-addr.arpa";
+        masters {
+                82.193.253.30;
+        };
+};
+
+zone "253.193.82.in-addr.arpa" {
+        type slave;
+        file "slave/db.253.193.82.in-addr.arpa";
+        masters {
+                82.193.253.30;
+        };
+};
+
+zone "254.193.82.in-addr.arpa" {
+        type slave;
+        file "slave/db.254.193.82.in-addr.arpa";
+        masters {
+                82.193.253.30;
+        };
+};
+
+zone "255.193.82.in-addr.arpa" {
+        type slave;
+        file "slave/db.255.193.82.in-addr.arpa";
+        masters {
+                82.193.253.30;
+        };
+};
+
+// Ende Domains mit primaeren Nameserver 82.193.253.30 (Medecom Rostock)
+
+
+// Start  Domains mit primaeren Nameserver 194.6.239.21 (Wikom Bernau)
+
+// zone "mekomonline.de" {
+//        type slave ;
+//        file "slave/db.mekomonline.de";
+//        masters {
+//                194.6.239.21;
+//        };
+// };
+
+// zone "ocsb.de" {
+//        type slave ;
+//        file "slave/db.ocsb.de";
+//        masters {
+//                194.6.239.21;
+//        };
+// };
+
+// Ende Domains mit primaeren Nameserver 194.6.239.21 (Wikom Bernau)
+
+
+// Start  Domains mit primaeren Nameserver 194.6.239.34 (Wikom Bernau)
+
+// zone "bernaunet.de" {
+//        type slave ;
+//        file "slave/db.bernaunet.de";
+//        masters {
+//                194.6.239.34;
+//        };
+// };
+
+// zone "239.6.194.in-addr.arpa" {
+//        type slave;
+//        file "slave/db.239.6.194.in-addr.arpa";
+//        masters {
+//                194.6.239.34;
+//        };
+// };
+
+// zone "witel.de" {
+//        type slave ;
+//         file "slave/db.witel.de";
+//        masters {
+//                194.6.239.34; 
+//        }; 
+// };
+
+// zone "ggab-bernau.de" {
+//        type slave ;
+//         file "slave/db.ggab-bernau.de";
+//        masters {
+//                194.6.239.34;
+//        };
+// };
+
+// zone "tennisleistungszentrum.de" {
+//        type slave ;
+//        file "slave/db.tennisleistungszentrum.de";
+//        masters {
+//                194.6.239.34;
+//        };
+// };
+
+// zone "sportforum-kleinmachnow.de" {
+//         type slave ;
+//         file "slave/db.sportforum-kleinmachnow.de";
+//        masters {
+//                194.6.239.34;
+//        };
+// };
+
+// zone "sportforum-bernau.de" {
+//        type slave ;
+//        file "slave/db.sportforum-bernau.de";
+//        masters {
+//                194.6.239.34;
+//        };
+// };
+
+// zone "vitadeum.de" {
+//        type slave ;
+//        file "slave/db.vitadeum.de";
+//        masters {
+//                194.6.239.34;
+//        };
+// };
+
+// zone "hgs-t.de" {
+//        type slave ;
+//        file "slave/db.hgs-t.de";
+//        masters {
+//                194.6.239.34;
+//        };
+// };
+
+// zone "mobilepchilfeschulz.de" {
+//         type slave ;
+//         file "slave/db.mobilepchilfeschulz.de";
+//         masters {
+//                 194.6.239.34;
+//         };
+// };
+
+// Ende  Domains mit primaeren Nameserver 194.6.239.34 (Wikom Bernau)
+
+// Start Domains mit primaeren Nameserver 153.96.43.2 (Frauenhofer IGD)
+
+zone "smartblue.de" {
+        type slave ;
+        file "slave/db.smartblue.de";
+        masters {
+                153.96.43.2;
+        };
+};
+
+zone "inventory-service.de" {
+        type slave ;
+        file "slave/db.inventory-service.de";
+        masters {
+                153.96.43.2;
+        };
+};
+
+zone "zgdv-r.de" {
+        type slave ; 
+        file "slave/db.zgdv-r.de";
+	masters {
+		153.96.43.2;
+	};
+};
+
+//zone "diatrace.de" {
+//        type slave ;
+//        file "slave/db.diatrace.de";
+//        masters {
+//                153.96.43.2;
+//        };
+//};
+
+zone "informatik-in-mv.de" {
+        type slave ;
+        file "slave/db.informatik-in-mv.de";
+        masters {
+                153.96.43.2;
+        };
+};
+         
+// Ende Domains mit primaeren Nameserver 153.96.43.2 (Frauenhofer IGD)
+
+
+// Start Domains mit primaeren Nameserver 153.96.43.150 (Frauenhofer IGD)
+
+//zone "emotion-in-hci.net" {
+//        type slave ;
+//        file "slave/db.emotion-in-hci.net";
+//        masters {
+//                153.96.43.150;
+//        };
+//};
+
+//zone "emotion-in-hci.com" {
+//        type slave ;
+//        file "slave/db.emotion-in-hci.com";
+//        masters {
+//                153.96.43.150;
+//        };
+//};
+
+//zone "xyberscout.de" {
+//        type slave ;
+//        file "slave/db.xyberscout.de";
+//        masters {
+//                153.96.43.150;
+//        };
+//};
+
+//zone "xyberscout.com" {
+//        type slave ;
+//        file "slave/db.xyberscout.com";
+//        masters {
+//                153.96.43.150;
+//        };
+//};
+
+// Ende Domains mit primaeren Nameserver 153.96.43.150 (Frauenhofer IGD)
+
+// Start Domains mit primaeren Nameserver 212.204.48.148 (Ostsee Zeitung)
+
+// zone "stralsundersonntag.de" { 
+//	type slave ; 
+//	file "slave/db.stralsundersonntag.de"; 
+//	masters {
+//		212.204.48.148;
+//	};
+//};
+
+// zone "stralsunder-sonntag.de" { 
+//	type slave ; 
+//	file "slave/db.stralsunder-sonntag.de"; 
+//	masters {
+//		212.204.48.148;
+//	};
+//};
+
+// zone "urlaubs-lotse.de" { 
+//	type slave ; 
+//	file "slave/db.urlaubs-lotse.de"; 
+//	masters {
+//		212.204.48.148;
+//	};
+//};
+
+// zone "oz-dialog.de" {
+//	type slave ;
+//	file "slave/db.oz-dialog.de";
+//	masters {
+//		212.204.48.148;
+//	};
+// };
+
+// zone "rostock-am-sonntag.de" {
+//	type slave ;
+//	file "slave/db.rostock-am-sonntag.de";
+//	masters {
+//		212.204.48.148;
+//	};
+//};
+
+// zone "rostocker-sonntag.de" {
+//	type slave ;
+//	file "slave/db.rostocker-sonntag.de";
+//	masters {
+//		212.204.48.148;
+//	};
+//};
+
+// zone "rostockersonntag.de" {
+//	type slave ;
+//	file "slave/db.rostockersonntag.de";
+//	masters {
+//		212.204.48.148;
+//	};
+//};
+
+// zone "olympclubrostock.de" {
+//        type slave ;
+//        file "slave/db.olympclubrostock.de";
+//        masters {
+//                212.204.48.148;
+//        };
+//};
+
+// zone "olymp-club-rostock.de" {
+//        type slave ;
+//        file "slave/db.olymp-club-rostock.de";
+//        masters {
+//                212.204.48.148;
+//        };
+//};
+
+zone "rostock2012.de" {
+        type slave ;
+        file "slave/db.rostock2012.de";
+	notify no;
+        masters {
+                212.204.48.148;
+        };
+};
+
+//zone "ostsee-zeitung.de" {
+//        type slave ;
+//        file "slave/db.ostsee-zeitung.de";
+//	notify no;
+//        masters {
+//                212.204.48.148;
+//        };
+//};
+
+// Ende Domains mit primaeren Nameserver 212.204.48.148 (Ostsee Zeitung)
+
+
+// Start Domains mit primaeren Nameserver 212.204.48.141 (ns1.binz-kabel.de)
+
+zone "binz-kabel.net" {
+	type slave ;
+	file "slave/db.binz-kabel.net";
+	masters {
+		212.204.48.141;
+	};
+};
+
+// Ende Domains mit primaeren Nameserver 212.204.48.141 (ns1.binz-kabel.de)
+
+
+// Domains mit primaerem Nameserver 212.204.37.2 (e.dis)
+
+// zone "e-dis.de" {
+//	type slave;
+//	file "slave/db.e-dis.de";
+//	masters {
+//		212.204.37.2;
+//	};
+// };
+
+// zone "energienord.de" {
+//	type slave;
+//	file "slave/db.energienord.de";
+//	masters {
+//		212.204.37.2;
+//	};
+// };
+
+// zone "edialog.de" {
+//        type slave;
+//        file "slave/db.edialog.de";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// zone "36.204.212.in-addr.arpa" {
+//	type slave;
+//	file "slave/db.36.204.212.in-addr.arpa";
+//	masters {
+//		212.204.37.2;
+//	};
+// };
+
+// zone "37.204.212.in-addr.arpa" {
+//	type slave;
+//	file "slave/db.37.204.212.in-addr.arpa";
+//	masters {
+//		212.204.37.2;
+//	};
+// };
+
+// zone "eon-edis.de" {
+//        type slave;
+//        file "slave/db.eon-edis.de";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// zone "eon-edis.com" {
+//        type slave;
+//        file "slave/db.eon-edis.com";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// zone "eon-edis.net" {
+//        type slave;
+//        file "slave/db.eon-edis.net";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// zone "eonedis.de" {
+//        type slave;
+//        file "slave/db.eonedis.de";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// zone "eonedis.com" {
+//        type slave;
+//        file "slave/db.eonedis.com";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// zone "eonedis.net" {
+//        type slave;
+//        file "slave/db.eonedis.net";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// zone "edisnatur.de" {
+//         type slave;
+//        file "slave/db.edisnatur.de";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// zone "edistherm.de" {
+//        type slave;
+//        file "slave/db.edistherm.de";
+//        masters {
+//                212.204.37.2;
+//        };
+// };
+
+// Ende Domains mit primaerem Nameserver 212.204.37.2 (e.dis)
+
+
+// Domains mit primaerem Nameserver 212.204.56.253 (Landkreis Potsdam-Mittelmark)
+
+ zone "potsdam-mittelmark.de" {
+        type slave;
+        file "slave/db.potsdam-mittelmark.de";
+        masters {
+                212.204.56.253;
+        };
+ };
+
+// classless reverse delegation fuer potsdam-mittelmark.de
+
+zone "224-27.56.204.212.in-addr.arpa" { 
+	type slave; 
+	file "slave/224_27.56.204.212.in-addr.arpa";
+	masters { 
+		212.204.56.253;
+	};
+};
+
+// Ende Domains mit primaerem Nameserver 212.204.56.253 (Landkreis Potsdam-Mittelmark)
+
+
+// secondary fuer classless reverse delegations fhg rostock
+// deaktiviert, syscall 6.8.14
+// auf Wunsch Fraunhofer IGD via M.Scherbinske
+//zone "0-25.51.204.212.in-addr.arpa" { 
+//	type slave; 
+//	file "slave/0-25.51.204.212.in-addr.arpa";
+//	masters { 
+//		//212.204.51.131;
+//		153.96.43.2;
+//	};
+//};
+//
+//zone "128-26.51.204.212.in-addr.arpa" { 
+//	type slave; 
+//	file "slave/128-26.51.204.212.in-addr.arpa";
+//	masters { 
+//		//212.204.51.131;
+//		153.96.43.2;
+//	};
+//};
+
+// old secondary fuer classless reverse delegations ostseezeitung
+//zone "144/28.48.204.212.in-addr.arpa" { 
+//	type slave; 
+//	file "slave/144_28.48.204.212.in-addr.arpa";
+//	notify no;
+//	masters { 
+//		212.204.48.148;
+//	};
+//};
+
+// new secondary fuer classless reverse delegations ostseezeitung
+//zone "144-28.48.204.212.in-addr.arpa" { 
+//	type slave; 
+//	file "slave/144-28.48.204.212.in-addr.arpa";
+//	masters { 
+//		212.204.48.148;
+//	};
+//};
+
+// secondary fuer classless reverse delegations nogetec
+zone "32/28.62.204.212.in-addr.arpa" {
+       type slave;
+       file "slave/32_28.62.204.212.in-addr.arpa";
+       masters {
+               212.204.62.34;
+       };
+};
+
+### Secondary fuer MHR GmbH. Erst einschalten, wenn KK-maessig alles durch ist.
+
+//// secondary fuer wanjek.com
+//
+//zone "wanjek.com" {
+//       type slave;
+//       file "slave/db.wanjek.com";
+//       masters {
+//               195.98.196.24;
+//       };
+//};
+//
+//// secondary fuer mhro.de
+//
+//zone "mhro.de" {
+//       type slave;
+//       file "slave/db.mhro.de";
+//       masters {
+//               195.98.196.24;
+//       };
+//};
+//
+//// secondary fuer gw1.net
+//
+//zone "gw1.net" {
+//       type slave;
+//       file "slave/db.gw1.net";
+//       masters {
+//               195.98.196.24;
+//       };
+//};
+//
+//
+//// secondary fuer aura-it.de
+//
+//zone "aura-it.de" {
+//       type slave;
+//       file "slave/db.aura-it.de";
+//       masters {
+//               212.204.38.24;
+//       };
+//};
+//
+//// secondary fuer aura-cs.de
+//
+//zone "aura-cs.de" {
+//      type slave;
+//       file "slave/db.aura-cs.de";
+//       masters {
+//               212.204.38.24;
+//       };
+//};
+
+// Kunde wuenscht keine hiddenprimary-Konfig mehr. Daher Domaintransfer zu uns als master. A. Zettl
+### Ende MHR secondary
+
+// Start Domains mit primaerem Nameserver 212.204.62.148 (SMEA GmbH)
+
+zone "smea-access.de" {
+      type slave;
+      file "slave/db.smea-access.de";
+      masters {
+               212.204.62.148;
+      };
+};
+
+// Ende Domains mir primaerem Nameserver 212.204.62.148 (SMEA GmbH)
+
+
+// Start Domains mit primaerem Nameserver 85.199.84.2 (alt: 193.155.132.2) (data experts GmbH)
+
+zone "84.199.85.in-addr.arpa" {
+      type slave;
+      file "slave/db.84.199.85.in-addr.arpa";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "data-experts.de" {
+      type slave;
+      file "slave/db.data-experts.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "sket-edv.de" {
+      type slave;
+      file "slave/db.sket-edv.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+//zone "marketing-club-neubrandenburg.de" {
+//      type slave;
+//      file "slave/db.marketing-club-neubrandenburg.de";
+//      masters {
+//               85.199.84.2;
+//      };
+//};
+
+zone "eler-online.de" {
+      type slave;
+      file "slave/db.eler-online.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "eler.eu" {
+      type slave;
+      file "slave/db.eler.eu";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "eafrd.eu" {
+      type slave;
+      file "slave/db.eafrd.eu";
+      masters {
+               85.199.84.2;
+      };
+};
+
+//zone "marketing-club-ostmv.de" {
+//      type slave;
+//      file "slave/db.marketing-club-ostmv.de";
+//      masters {
+//               85.199.84.2;
+//      };
+//};
+
+zone "x-out.de" {
+      type slave;
+      file "slave/db.x-out.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "iigm.de" {
+      type slave;
+      file "slave/db.iigm.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "agdpm.de" {
+      type slave;
+      file "slave/db.agdpm.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "diabetes-pflege-management.de" {
+      type slave;
+      file "slave/db.diabetes-pflege-management.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "dataexperts.de" {
+      type slave;
+      file "slave/db.dataexperts.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "data-experts.eu" {
+      type slave;
+      file "slave/db.data-experts.eu";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "greening-rechner.de" {
+      type slave;
+      file "slave/db.greening-rechner.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "diabetes-pflegeeinrichtungen.de" {
+      type slave;
+      file "slave/db.diabetes-pflegeeinrichtungen.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+zone "diabetespflegeeinrichtungen.de" {
+      type slave;
+      file "slave/db.diabetespflegeeinrichtungen.de";
+      masters {
+               85.199.84.2;
+      };
+};
+
+
+// Ende Domains mir primaerem Nameserver 85.199.84.2 (data experts GmbH)
+
+
+// Start Domains mit primaeren Nameserver 195.145.210.250 (Netfox)
+
+// secondary fuer classless reverse delegations Netfox
+zone "112-29.61.204.212.in-addr.arpa" {
+       type slave;
+       file "slave/112-29.61.204.212.in-addr.arpa";
+       masters {
+               195.145.210.250;
+       };
+};
+
+// Ende Domains mit primaeren Nameserver 195.145.210.250 (Netfox)
+
+
+// Start Domains mit primaerem Nameservern 212.204.60.4 (ns1.bytecamp.net) u. 212.204.49.83 (ns2.bytecamp.net) 
+
+// secondary fuer classless reverse delegations Bytecamp
+zone "8.0.4.4.0.8.3.a.1.0.a.2.ip6.arpa" {
+       type slave;
+       file "slave/8.0.4.4.0.8.3.a.1.0.a.2.ip6.arpa";
+       masters {
+               212.204.60.4; 212.204.49.83;
+       };
+};
+
+
+
+// Ende Domains mit primaerem Nameservern 212.204.60.4 u. 212.204.49.83 (Bytecamp) 
+
+
+
+
+### MASTER DOMAINS ------------------------------------------------------------
+
+// e.discom, e.dis
+
+zone "ediscom.de" { type master; file "master/db.ediscom.de"; };
+
+zone "ediscom.net" { type master; file "master/db.ediscom.net"; };
+
+zone "ediscom-speedline.de" { type master; file "master/db.ediscom-speedline.de"; };
+
+zone "speedline-city.de" { type master; file "master/db.speedline-city.de"; };
+
+zone "mevacom.de" { type master; file "master/db.mevacom.de"; };
+
+zone "rios.de" { type master; file "master/db.rios.de"; };
+
+zone "edisaqua.de" { type master; file "master/db.edisaqua.de"; };
+
+zone "edislux.de" { type master; file "master/db.edislux.de"; };
+
+zone "e-dis24.de" { type master; file "master/db.e-dis24.de"; };
+
+zone "edis24.de" { type master; file "master/db.edis24.de"; };
+
+zone "ediskurs.de" { type master; file "master/db.ediskurs.de"; };
+
+zone "e-diskurs.de" { type master; file "master/db.e-diskurs.de"; };
+
+zone "edis-kurs.de" { type master; file "master/db.edis-kurs.de"; };
+
+zone "e-dis-kurs.de" { type master; file "master/db.e-dis-kurs.de"; };
+
+zone "edis-energia.de" { type master; file "master/db.edis-energia.de"; };
+
+zone "edialog-online.de" { type master; file "master/db.edialog-online.de"; };
+
+zone "eon-edisenergia.com" { type master; file "master/db.eon-edisenergia.com"; };
+
+zone "eon-edis-energia.com" { type master; file "master/db.eon-edis-energia.com"; };
+
+zone "eonedisenergia.com" { type master; file "master/db.eonedisenergia.com"; };
+
+// zone "eon-bestservice.de" { type master; file "master/db.eon-bestservice.de"; };
+
+// zone "eon-bestservice.com" { type master; file "master/db.eon-bestservice.com"; };
+
+// zone "eon-best-service.de" { type master; file "master/db.eon-best-service.de"; };
+
+// zone "eon-best-service.com" { type master; file "master/db.eon-best-service.com"; };
+
+zone "edisnatur.de" { type master; file "master/db.edisnatur.de"; };
+
+zone "eonedis.de" { type master; file "master/db.eonedis.de"; };
+
+zone "edistherm.de" { type master; file "master/db.edistherm.de"; };
+
+zone "energienord.de" { type master; file "master/db.energienord.de"; };
+
+zone "edialog.de" { type master; file "master/db.edialog.de"; };
+
+zone "e-dis.de" { type master; file "master/db.e-dis.de"; };
+
+zone "eon-edis.de" { type master; file "master/db.eon-edis.de"; };
+
+zone "eonedis.net" { type master; file "master/db.eonedis.net"; };
+
+zone "eonedis.com" { type master; file "master/db.eonedis.com"; };
+
+zone "e-edis.de"   { type master; file "master/db.e-edis.de"; };
+
+zone "eon-edis.com" { type master; file "master/db.eon-edis.com"; };
+
+zone "eon-edis.net" { type master; file "master/db.eon-edis.net"; };
+
+zone "eon-edis-windservice.de" { type master; file "master/db.eon-edis-windservice.de"; };
+
+zone "eon-edis-windservice.com" { type master; file "master/db.eon-edis-windservice.com"; };
+
+zone "eon-windservice.com" { type master; file "master/db.eon-windservice.com"; };
+
+zone "eon-windservice.de" { type master; file "master/db.eon-windservice.de"; };
+
+zone "e-windservice.com" { type master; file "master/db.e-windservice.com"; };
+
+zone "e-windservice.de" { type master; file "master/db.e-windservice.de"; };
+
+zone "stadtwerke-luckenwalde.de" { type master; file "master/db.stadtwerke-luckenwalde.de"; };
+
+zone "stadtwerke-luckenwalde.com" { type master; file "master/db.stadtwerke-luckenwalde.com"; };
+
+
+
+
+
+
+
+// Polnische Domains
+// zone "edis-energia.pl" { type master; file "master/db.edis-energia.pl"; };
+zone "eon-edis.pl" { type master; file "master/db.eon-edis.pl"; };
+// zone "eon-edisenergia.pl" { type master; file "master/db.eon-edisenergia.pl"; };
+zone "eon-edisenergia.com.pl" { type master; file "master/db.eon-edisenergia.com.pl"; };
+zone "eon-edis-energia.pl" { type master; file "master/db.eon-edis-energia.pl"; };
+zone "eon-edis-energia.com.pl" { type master; file "master/db.eon-edis-energia.com.pl"; };
+zone "eonedisenergia.pl" { type master; file "master/db.eonedisenergia.pl"; };
+zone "eonedisenergia.com.pl" { type master; file "master/db.eonedisenergia.com.pl"; };
+
+
+
+// syscall
+
+zone "syswall.de"  { type master; file "master/db.syswall.de"; };
+zone "syscall.de"  { type master; file "master/db.syscall.de"; };
+zone "syscall.net" { type master; file "master/db.syscall.net"; };
+zone "albocha.de"  { type master; file "master/db.albocha.de"; };
+zone "das-schmeckt-meinem-hund.de"  { type master; file "master/db.das-schmeckt-meinem-hund.de"; };
+zone "was-schmeckt-meinem-hund.de"  { type master; file "master/db.was-schmeckt-meinem-hund.de"; };
+// syscall ip6  -- chakl@syscall.de
+zone "c.2.3.1.8.f.6.0.1.0.0.2.ip6.arpa" { type master; file "master/db.syscall.net.v6.rev"; };
+// syscall spamtrap domains
+zone "ide2scsi.de" { type master; file "master/db.ide2scsi.de"; };
+zone "sysmall.de"  { type master; file "master/db.sysmall.de"; };
+// schmadde
+zone "schmad.de" { 
+      type slave;
+      file "slave/db.schmad.de";
+      masters {
+               88.198.171.238;
+      };
+};
+
+// kreditversicherung
+
+zone "export-factoring.de" { type master; file "master/db.export-factoring.de"; };
+zone "kreditversicherung-deutschland.de" { type master; file "master/db.kreditversicherung-deutschland.de"; };
+// zone "warenkreditversicherung-deutschland.de" { type master; file "master/db.warenkreditversicherung-deutschland.de"; };
+zone "factoringbuero.de" { type master; file "master/db.factoringbuero.de"; };
+// zone "factoring-deutschland.de" { type master; file "master/db.factoring-deutschland.de"; };
+zone "export-factoring.com" { type master; file "master/db.export-factoring.com"; };
+zone "kreditversicherung-deutschland.com" { type master; file "master/db.kreditversicherung-deutschland.com"; };
+// zone "warenkreditversicherung-deutschland.com" { type master; file "master/db.warenkreditversicherung-deutschland.com"; };
+// zone "factoringbuero.com" { type master; file "master/db.factoringbuero.com"; };
+// zone "factoring-deutschland.com" { type master; file "master/db.factoring-deutschland.com"; };
+// zone "factoring-makler.de" { type master; file "master/db.factoring-makler.de"; };
+zone "stilles-factoring.de" { type master; file "master/db.stilles-factoring.de"; };
+zone "inhouse-factoring.de" { type master; file "master/db.inhouse-factoring.de"; };
+// zone "stillesfactoring.de" { type master; file "master/db.stillesfactoring.de"; };
+zone "inhousefactoring.de" { type master; file "master/db.inhousefactoring.de"; };
+zone "faelligkeitsfactoring.de" { type master; file "master/db.faelligkeitsfactoring.de"; };
+zone "faelligkeits-factoring.de" { type master; file "master/db.faelligkeits-factoring.de"; };
+zone "fullservicefactoring.de" { type master; file "master/db.fullservicefactoring.de"; };
+zone "fullservice-factoring.de" { type master; file "master/db.fullservice-factoring.de"; };
+
+
+// andere (unsortiert)
+
+zone "kinderbuch.net" { type master; file "master/db.kinderbuch.net"; };
+
+// zone "bornstedter-feld.de" { type master; file "master/db.bornstedter-feld.de"; };
+
+// zone "accounting-systems.de" { type master; file "master/db.accounting-systems.de"; };
+
+// zone "bundesvermoegensamt-potsdam.de" { type master; file "master/db.bundesvermoegensamt-potsdam.de"; };
+
+# zone "schnepf-baustoffe.de" { type master; file "master/db.schnepf-baustoffe.de"; };
+
+// zone "bautreff-schnepf.de" { type master; file "master/db.bautreff-schnepf.de"; };
+
+zone "bauzentrum-schnepf.de" { type master; file "master/db.bauzentrum-schnepf.de"; };
+
+zone "brandenburg-wirtschaft.de" { type master; file "master/db.brandenburg-wirtschaft.de"; };
+
+zone "hevag.de" { type master; file "master/db.hevag.de"; };
+
+zone "hansetel.de" { type master; file "master/db.hansetel.de"; };
+
+zone "flaeming-net.de" { type master; file "master/db.flaeming-net.de"; };
+
+zone "rathenow.de" { type master; file "master/db.rathenow.de"; };
+
+// zone "forum-berlin.de" { type master; file "master/db.forum-berlin.de"; };
+
+// zone "ifr-regelungstechnik.de" { type master; file "master/db.ifr-regelungstechnik.de"; };
+
+// zone "karef.de" { type master; file "master/db.karef.de"; };
+
+zone "elfa-falkensee.de" { type master; file "master/db.elfa-falkensee.de"; };
+
+zone "meab.de" { type master; file "master/db.meab.de"; };
+
+// zone "b54.de" { type master; file "master/db.b54.de"; };
+
+zone "stwb-brandenburg.de" { type master; file "master/db.stwb-brandenburg.de"; };
+
+// zone "hugo-serna.de" { type master; file "master/db.hugo-serna.de"; };
+
+// zone "luxum.de" { type master; file "master/db.luxum.de"; };
+
+// zone "luxoom.com" { type master; file "master/db.luxoom.com"; };
+
+// zone "osten-online.de" { type master; file "master/db.osten-online.de"; };
+
+// zone "zumosten.de" { type master; file "master/db.zumosten.de"; };
+
+// zone "imosten.de" { type master; file "master/db.imosten.de"; };
+
+// zone "portalzumosten.de" { type master; file "master/db.portalzumosten.de"; };
+
+// zone "hausdesostens.de" { type master; file "master/db.hausdesostens.de"; };
+
+zone "vemmtec.com" { type master; file "master/db.vemmtec.com"; };
+
+// zone "vemmtec.de" { type master; file "master/db.vemmtec.de"; };
+
+// zone "totalfinaelf-service.de" { type master; file "master/db.totalfinaelf-service.de"; };
+
+// zone "aepnet.de" { type master; file "master/db.aepnet.de"; };
+
+// zone "kwwm.de" {type master; file "master/db.kwwm.de"; };
+
+zone "katanatechnologies.com" { type master; file "master/db.katanatechnologies.com"; };
+
+zone "katanalaser.com" { type master; file "master/db.katanalaser.com"; };
+
+// zone "stralsund.de" { type master; file "master/db.stralsund.de"; };
+
+// zone "rowi-med.de" { type master; file "master/db.rowi-med.de"; };
+
+// zone "katanaworld.com" { type master; file "master/db.katanaworld.com"; };
+
+zone "mevagnet.de" { type master; file "master/db.mevagnet.de"; };
+
+// zone "adolisa.com" { type master; file "master/db.adolisa.com"; };
+
+// zone "ole-johannes.de" { type master; file "master/db.ole-johannes.de"; };
+
+// zone "aepkabel.de" { type master; file "master/db.aepkabel.de"; };
+
+// zone "plueckhahnkabel.de" { type master; file "master/db.plueckhahnkabel.de"; };
+
+// zone "plueckhahnservice.de" { type master; file "master/db.plueckhahnservice.de"; };
+
+zone "jc-havanna-hst.de" { type master; file "master/db.jc-havanna-hst.de"; };
+
+// zone "odingruppe.de" { type master; file "master/db.odingruppe.de"; };
+
+// zone "wowi-wolgast.de" { type master; file "master/db.wowi-wolgast.de"; };
+
+// zone "fas-tv.de" { type master; file "master/db.fas-tv.de"; };
+
+zone "wolgasttv.de" { type master; file "master/db.wolgasttv.de"; };
+
+// zone "art-cube.com" { type master; file "master/db.art-cube.com"; };
+
+// zone "art-cube.net" { type master; file "master/db.art-cube.net"; };
+
+// zone "ist-teltow.de" { type master; file "master/db.ist-teltow.de"; };
+
+zone "stadtwerke-ludwigsfelde.de" { type master; file "master/db.stadtwerke-ludwigsfelde.de"; };
+
+zone "kraftwerk-rostock.de" { type master; file "master/db.kraftwerk-rostock.de"; };
+
+zone "kraftwerk-rostock.com" { type master; file "master/db.kraftwerk-rostock.com"; };
+
+zone "kraftwerk-rostock.net" { type master; file "master/db.kraftwerk-rostock.net"; };
+
+// zone "ifcos.de" { type master; file "master/db.ifcos.de"; };
+
+zone "sympol.de" { type master; file "master/db.sympol.de"; };
+
+// zone "acalis.de" { type master; file "master/db.acalis.de"; };
+
+// zone "spider-business.de" { type master; file "master/db.spider-business.de"; };
+
+// zone "5punkt6.de" { type master; file "master/db.5punkt6.de"; };
+
+zone "5punkt6.com" { type master; file "master/db.5punkt6.com"; };
+
+// zone "peterkubin.de" { type master; file "master/db.peterkubin.de"; };
+
+// zone "peterkubin.com" { type master; file "master/db.peterkubin.com"; };
+
+zone "technology-enterprise.de" { type master; file "master/db.technology-enterprise.de"; };
+
+zone "technology-enterprise.com" { type master; file "master/db.technology-enterprise.com"; };
+
+// zone "buerofuerungewoehnlichesoftwareentwicklung.de" { type master; file "master/db.buerofuerungewoehnlichesoftwareentwicklung.de"; };
+
+// zone "buero-fuer-andere-softwareentwicklung.de" { type master; file "master/db.buero-fuer-andere-softwareentwicklung.de"; };
+
+// zone "buero-fuer-ungewoehnliche-software-entwicklung.de" { type master; file "master/db.buero-fuer-ungewoehnliche-software-entwicklung.de"; };
+
+// zone "buro-fur-ungewohnliche-software-entwicklung.de" { type master; file "master/db.buro-fur-ungewohnliche-software-entwicklung.de"; };
+
+// zone "burofurungewohnlichesoftwareentwicklung.de" { type master; file "master/db.burofurungewohnlichesoftwareentwicklung.de"; };
+
+zone "bfuse.com" { type master; file "master/db.bfuse.com"; };
+
+zone "bfuse.de" { type master; file "master/db.bfuse.de"; };
+
+// sympol.{com,org,net} sind lange weg, chakl@syscall 25.2.14
+//zone "sympol.com" { type master; file "master/db.sympol.com"; };
+//zone "sympol.net" { type master; file "master/db.sympol.net"; };
+//zone "sympol.org" { type master; file "master/db.sympol.org"; };
+
+// zone "isidor24.de" { type master; file "master/db.isidor24.de"; };
+
+// zone "isidor24.com" { type master; file "master/db.isidor24.com"; };
+
+// zone "easydoor24.com" { type master; file "master/db.easydoor24.com"; };
+
+// zone "gymnabeel.de" { type master; file "master/db.gymnabeel.de"; };
+
+zone "info-ags.de" { type master; file "master/db.info-ags.de"; };
+
+// zone "bwbs.de" { type master; file "master/db.bwbs.de"; };
+
+// zone "schild-stoll.de" { type master; file "master/db.schild-stoll.de"; };
+
+// zone "willy-brandt.de" { type master; file "master/db.willy-brandt.de"; };
+
+// zone "willy-brandt.org" { type master; file "master/db.willy-brandt.org"; };
+
+zone "creaplan-gmbh.de" { type master; file "master/db.creaplan-gmbh.de"; };
+
+zone "schloss-beesenstedt.de" { type master; file "master/db.schloss-beesenstedt.de"; };
+
+// zone "sexualwissenschaft.net" { type master; file "master/db.sexualwissenschaft.net"; };
+
+zone "sbl-gmbh.net" { type master; file "master/db.sbl-gmbh.net"; };
+
+// zone "ifr-gebaeudemanagement.de" { type master; file "master/db.ifr-gebaeudemanagement.de"; };
+
+//zone "brandenburger-blaeserkreis.de" { type master; file "master/db.brandenburger-blaeserkreis.de"; };
+
+zone "katanalaser.de" { type master; file "master/db.katanalaser.de"; };
+
+zone "neue-gaerten-potsdam.de" { type master; file "master/db.neue-gaerten-potsdam.de"; };
+
+// zone "werknovalis.de" { type master; file "master/db.werknovalis.de"; };
+
+// zone "werk-novalis.de" { type master; file "master/db.werk-novalis.de"; };
+
+// zone "werknovalis.com" { type master; file "master/db.werknovalis.com"; };
+
+// zone "werk-novalis.com" { type master; file "master/db.werk-novalis.com"; };
+
+zone "edellikoere.de" { type master; file "master/db.edellikoere.de"; };
+
+// zone "k-r-a-f-t.com" { type master; file "master/db.k-r-a-f-t.com"; };
+
+// zone "andreaskraft.com" { type master; file "master/db.andreaskraft.com"; };
+
+zone "ernstella.de" { type master; file "master/db.ernstella.de"; };
+
+zone "teraklin.net" { type master; file "master/db.teraklin.net"; };
+
+zone "interschalt-sear.de" { type master; file "master/db.interschalt-sear.de"; };
+
+// zone "x4t.de" { type master; file "master/db.x4t.de"; };
+
+// zone "stadtdruckerei.de" { type master; file "master/db.stadtdruckerei.de"; };
+
+zone "stadt-rathenow.de" { type master; file "master/db.stadt-rathenow.de"; };
+
+// zone "wowi-immo.de" { type master; file "master/db.wowi-immo.de"; };
+
+zone "vs-soft.de" { type master; file "master/db.vs-soft.de"; };
+
+zone "traponas.de" { type master; file "master/db.traponas.de"; };
+
+// zone "kiesvertrieb.de" { type master; file "master/db.kiesvertrieb.de"; };
+
+// zone "angelcenter-schlosspassage.de" { type master; file "master/db.angelcenter-schlosspassage.de"; };
+
+zone "geburtshaus-berlin.de" { type master; file "master/db.geburtshaus-berlin.de"; };
+
+zone "palmatel.com" { type master; file "master/db.palmatel.com"; };
+
+zone "stwb.de" { type master; file "master/db.stwb.de"; };
+
+// zone "usedom-jazz.de" { type master; file "master/db.usedom-jazz.de"; };
+
+zone "usedomsolar.de" { type master; file "master/db.usedomsolar.de"; };
+
+// zone "aeponline.de" { type master; file "master/db.aeponline.de"; };
+
+zone "potsdam-gewinnt.de" { type master; file "master/db.potsdam-gewinnt.de"; };
+
+zone "potsdamgewinnt.de" { type master; file "master/db.potsdamgewinnt.de"; };
+
+zone "schilkin.com" { type master; file "master/db.schilkin.com"; };
+
+zone "ksb-net.de" { type master; file "master/db.ksb-net.de"; };
+
+zone "kabelsat-bergen.de" { type master; file "master/db.kabelsat-bergen.de"; };
+
+// zone "nanue-deko.de" { type master; file "master/db.nanue-deko.de"; };
+
+zone "argus-haus.de" { type master; file "master/db.argus-haus.de"; };
+
+zone "wandlitz.de" { type master; file "master/db.wandlitz.de"; };
+
+zone "netzservice-mv.de" { type master;  file "master/db.netzservice-mv.de"; };
+
+zone "meducase.de" { type master;  file "master/db.meducase.de"; };
+
+// zone "mare-haus.de" { type master; file "master/db.mare-haus.de"; };
+
+// zone "marehaus.de" { type master; file "master/db.marehaus.de"; };
+
+zone "luba.flaeming-net.de" { type master; file "master/db.luba.flaeming-net.de"; };
+
+// zone "avf.de" { type master; file "master/db.avf.de"; };
+
+// zone "udk.de" { type master; file "master/db.udk.de"; };
+
+// zone "fivepointsix.de" { type master; file "master/db.fivepointsix.de"; };
+ 
+zone "schilkin.de" { type master; file "master/db.schilkin.de"; };
+
+zone "schilkin-international.de" { type master; file "master/db.schilkin-international.de"; };
+
+zone "zarenwodka.de" { type master; file "master/db.zarenwodka.de"; };
+
+// zone "visible-science.de" { type master; file "master/db.visible-science.de"; };
+
+zone "regioinf.de" { type master; file "master/db.regioinf.de"; };
+
+// zone "blueboxeurope.de" { type master; file "master/db.blueboxeurope.de"; };
+
+// zone "europehouse.de" { type master; file "master/db.europehouse.de"; };
+
+zone "eleg.de" { type master; file "master/db.eleg.de"; };
+
+// zone "exit-production.de" { type master; file "master/db.exit-production.de"; };
+
+zone "datastrom.com" { type master; file "master/db.datastrom.com"; };
+
+// zone "spaninglish.com" { type master; file "master/db.spaninglish.com"; };
+
+// zone "spaninglish.net" { type master; file "master/db.spaninglish.net"; };
+
+// zone "spaninglish.org" { type master; file "master/db.spaninglish.org"; };
+
+zone "dinner-with-tv.net" { type master; file "master/db.dinner-with-tv.net"; };
+
+//zone "hansel-antennenbau.de" { type master; file "master/db.hansel-antennenbau.de"; };
+
+// zone "enutec.de" { type master; file "master/db.enutec.de"; };
+
+// zone "john-brinckman-keller.de" { type master; file "master/db.john-brinckman-keller.de"; };
+
+// zone "art-cube.de" { type master; file "master/db.art-cube.de"; };
+
+// zone "luxoom.de" { type master; file "master/db.luxoom.de"; };
+
+zone "krm-online.de" { type master; file "master/db.krm-online.de"; };
+
+// zone "kulturverein-wolgast.de" { type master; file "master/db.kulturverein-wolgast.de"; };
+
+zone "stralsund.eu" { type master; file "master/db.stralsund.eu"; };
+
+zone "air-laid.de" { type master; file "master/db.air-laid.de"; };
+
+zone "air-laid.eu" { type master; file "master/db.air-laid.eu"; };
+
+zone "concert-gmbh.de" { type master; file "master/db.concert-gmbh.de"; };
+
+zone "concert.de" { type master; file "master/db.concert.de"; };
+
+zone "con-care.de" { type master; file "master/db.con-care.de"; };
+
+zone "conclean.de" { type master; file "master/db.conclean.de"; };
+
+zone "con-clean.de" { type master; file "master/db.con-clean.de"; };
+
+zone "confresh.de" { type master; file "master/db.confresh.de"; };
+
+zone "con-fresh.de" { type master; file "master/db.con-fresh.de"; };
+
+zone "conlint.de" { type master; file "master/db.conlint.de"; };
+
+zone "con-lint.de" { type master; file "master/db.con-lint.de"; };
+
+zone "bestmadeairlaid.de" { type master; file "master/db.bestmadeairlaid.de"; };
+
+zone "best-made-airlaid.de" { type master; file "master/db.best-made-airlaid.de"; };
+
+// zone "con-care.com" { type master; file "master/db.con-care.com"; };
+
+// zone "con-clean.com" { type master; file "master/db.con-clean.com"; };
+
+// zone "confresh.com" { type master; file "master/db.confresh.com"; };
+
+// zone "con-fresh.com" { type master; file "master/db.con-fresh.com"; };
+
+zone "conlint.com" { type master; file "master/db.conlint.com"; };
+
+zone "con-lint.com" { type master; file "master/db.con-lint.com"; };
+
+zone "granucell.com" { type master; file "master/db.granucell.com"; };
+
+zone "granu-cell.com" { type master; file "master/db.granu-cell.com"; };
+
+zone "concare.eu" { type master; file "master/db.concare.eu"; };
+
+zone "constyle.eu" { type master; file "master/db.constyle.eu"; };
+
+zone "confresh.eu" { type master; file "master/db.confresh.eu"; };
+
+// zone "ai-comp.de" { type master; file "master/db.ai-comp.de"; };
+
+// zone "ai-comp.net" { type master; file "master/db.ai-comp.net"; };
+
+zone "conclean.eu" { type master; file "master/db.conclean.eu"; };
+
+zone "ediscom.eu" { type master; file "master/db.ediscom.eu"; };
+
+zone "sear-gmbh.de" { type master; file "master/db.sear-gmbh.de"; };
+
+zone "eon-edis-netz.de" { type master; file "master/db.eon-edis-netz.de"; };
+
+zone "eon-edis-netz.com" { type master; file "master/db.eon-edis-netz.com"; };
+
+zone "mati-gmbh.de" { type master; file "master/db.mati-gmbh.de"; };
+
+zone "luknet.de" { type master; file "master/db.luknet.de"; };
+
+zone "anecom.de" { type master; file "master/db.anecom.de"; };
+
+zone "viasolution.net" { type master; file "master/db.viasolution.net"; };
+
+zone "e-inkasso-potsdam.de" { type master; file "master/db.e-inkasso-potsdam.de"; };
+
+zone "e-inkasso-potsdam.com" { type master; file "master/db.e-inkasso-potsdam.com"; };
+
+zone "e-inkasso-gmbh.de" { type master; file "master/db.e-inkasso-gmbh.de"; };
+
+zone "energie-inkasso.de" { type master; file "master/db.energie-inkasso.de"; };
+
+// zone "smea-access.de" { type master; file "master/db.smea-access.de"; };
+
+// zone "aepservice.de" { type master; file "master/db.aepservice.de"; };
+
+zone "movie-car.com" { type master; file "master/db.movie-car.com"; };
+
+zone "ask-brb.de" { type master; file "master/db.ask-brb.de"; };
+
+// zone "psgservice.de" { type master; file "master/db.psgservice.de"; };
+
+// zone "kabelaep.de" { type master; file "master/db.kabelaep.de"; };
+
+// zone "kabeldeutschlandaep.de" { type master; file "master/db.kabeldeutschlandaep.de"; };
+
+zone "buergerbuero-fuerstenwalde.de" { type master; file "master/db.buergerbuero-fuerstenwalde.de"; };
+
+zone "stadtbibliothek-fuerstenwalde.de" { type master; file "master/db.stadtbibliothek-fuerstenwalde.de"; };
+
+zone "bibo-fw.de" { type master; file "master/db.bibo-fw.de"; };
+
+zone "enerline.de" { type master; file "master/db.enerline.de"; };
+
+zone "speedbrbmv.de" { type master; file "master/db.speedbrbmv.de"; };
+
+zone "chiba-project.org" { type master; file "master/db.chiba-project.org"; };
+
+zone "sbl-gmbh.eu" { type master; file "master/db.sbl-gmbh.eu"; };
+
+zone "visilase.com" { type master; file "master/db.visilase.com"; };
+
+zone "dombert.de" { type master; file "master/db.dombert.de"; };
+
+zone "esys-nachhaltigkeitscheck.de" { type master; file "master/db.esys-nachhaltigkeitscheck.de"; };
+
+zone "sabinchenautomaten.de" { type master; file "master/db.sabinchenautomaten.de"; };
+
+zone "achtvorort.de" { type master; file "master/db.achtvorort.de"; };
+
+zone "acht-vor-ort.de" { type master; file "master/db.acht-vor-ort.de"; };
+
+zone "8vorort.de" { type master; file "master/db.8vorort.de"; };
+
+zone "8-vor-ort.de" { type master; file "master/db.8-vor-ort.de"; };
+
+zone "betterform.de" { type master; file "master/db.betterform.de"; };
+
+// zone "bauxpert-schnepf.de" { type master; file "master/db.bauxpert-schnepf.de"; };
+
+// zone "edis-contracting.de" { type master; file "master/db.edis-contracting.de"; };
+
+zone "edis-contracting.com" { type master; file "master/db.edis-contracting.com"; };
+
+// zone "eon-edis-contracting.de" { type master; file "master/db.eon-edis-contracting.de"; };
+
+// zone "eon-edis-contracting.com" { type master; file "master/db.eon-edis-contracting.com"; };
+
+//zone "input-catering.de" { type master; file "master/db.input-catering.de"; };
+
+// zone "paketo-mobile.com" { type master; file "master/db.paketo-mobile.com"; };
+
+// zone "paketo-mobile.de" { type master; file "master/db.paketo-mobile.de"; };
+
+zone "kreis-pm.de" { type master; file "master/db.kreis-pm.de"; };
+
+zone "lkpm.de" { type master; file "master/db.lkpm.de"; };
+
+zone "potsdam-mittelmark.info" { type master; file "master/db.potsdam-mittelmark.info"; };
+
+zone "potsdam-mittelmark.org" { type master; file "master/db.potsdam-mittelmark.org"; };
+
+zone "mc-potsdam.de" { type master; file "master/db.mc-potsdam.de"; };
+
+// zone "pacour.de" { type master; file "master/db.pacour.de"; };
+
+// zone "pakour.de" { type master; file "master/db.pakour.de"; };
+
+// zone "pots-blitz.de" { type master; file "master/db.pots-blitz.de"; };
+
+// zone "potz-blitz.de" { type master; file "master/db.potz-blitz.de"; };
+
+zone "pre-inkasso.de" { type master; file "master/db.pre-inkasso.de"; };
+
+zone "preinkasso.de" { type master; file "master/db.preinkasso.de"; };
+
+zone "marketing-in-brandenburg.de" { type master; file "master/db.marketing-in-brandenburg.de"; };
+
+zone "potsdamer-dezemberball.de" { type master; file "master/db.potsdamer-dezemberball.de"; };
+
+zone "potsdamer-marketingtag.de" { type master; file "master/db.potsdamer-marketingtag.de"; };
+
+zone "arikon-genshagen.de" { type master; file "master/db.arikon-genshagen.de"; };
+
+zone "alldry.de" { type master; file "master/db.alldry.de"; };
+
+zone "alldry.eu" { type master; file "master/db.alldry.eu"; };
+
+zone "all-dry.de" { type master; file "master/db.all-dry.de"; };
+
+zone "all-dry.eu" { type master; file "master/db.all-dry.eu"; };
+
+zone "biberburg-online.de" { type master; file "master/db.biberburg-online.de"; };
+
+zone "windundnetzservice.de" { type master; file "master/db.windundnetzservice.de"; };
+
+zone "windundnetz.de" { type master; file "master/db.windundnetz.de"; };
+
+zone "ihrwindservice.de" { type master; file "master/db.ihrwindservice.de"; };
+
+zone "extern-sensys.de" { type master; file "master/db.extern-sensys.de"; };
+
+zone "e-wiga.de" { type master; file "master/db.e-wiga.de"; };
+
+zone "ewiga.de" { type master; file "master/db.ewiga.de"; };
+
+zone "e-triga.de" { type master; file "master/db.e-triga.de"; };
+
+zone "etriga.de" { type master; file "master/db.etriga.de"; };
+
+zone "netz-wind.de" { type master; file "master/db.netz-wind.de"; };
+
+zone "halbesonnen.de" { type master; file "master/db.halbesonnen.de"; };
+
+//zone "mmhmv.de" { type master; file "master/db.mmhmv.de"; };
+
+//zone "mmh-mv.de" { type master; file "master/db.mmh-mv.de"; };
+
+zone "sensys.de" { type master; file "master/db.sensys.de"; };
+
+zone "adebton.de" { type master; file "master/db.adebton.de"; };
+
+zone "adebton.com" { type master; file "master/db.adebton.com"; };
+
+zone "anco.pl" { type master; file "master/db.anco.pl"; };
+
+zone "sensysmagnetometers.com" { type master; file "master/db.sensysmagnetometers.com"; };
+
+zone "sensysglobal.com" { type master; file "master/db.sensysglobal.com"; };
+
+zone "sensysonline.com" { type master; file "master/db.sensysonline.com"; };
+
+zone "diabetes-pflege-akademie.de" { type master; file "master/db.diabetes-pflege-akademie.de"; };
+
+zone "diabetespflegeakademie.de" { type master; file "master/db.diabetespflegeakademie.de"; };
+
+zone "e-dis.ag" { type master; file "master/db.e-dis.ag"; };
+
+zone "edis.ag" { type master; file "master/db.edis.ag"; };
+
+zone "e-disag.de" { type master; file "master/db.e-disag.de"; };
+
+zone "e-disag.com" { type master; file "master/db.e-disag.com"; };
+
+zone "edis-ag.de" { type master; file "master/db.edis-ag.de"; };
+
+zone "edis-ag.com" { type master; file "master/db.edis-ag.com"; };
+
+zone "edis-ag.eu" { type master; file "master/db.edis-ag.eu"; };
+
+zone "edis-ag.net" { type master; file "master/db.edis-ag.net"; };
+
+zone "edis-ag.org" { type master; file "master/db.edis-ag.org"; };
+
+zone "edis-ag.biz" { type master; file "master/db.edis-ag.biz"; };
+
+zone "e-disag.eu" { type master; file "master/db.e-disag.eu"; };
+
+zone "e-disag.net" { type master; file "master/db.e-disag.net"; };
+
+zone "e-disag.org" { type master; file "master/db.e-disag.org"; };
+
+zone "e-disag.biz" { type master; file "master/db.e-disag.biz"; };
+
+zone "barnim-panorama.de" { type master; file "master/db.barnim-panorama.de"; };
+
+// zone "barnimpanorama.de" { type master; file "master/db.barnimpanorama.de"; };
+
+// zone "barnim-panorama.com" { type master; file "master/db.barnim-panorama.com"; };
+
+//zone "barnim-panorama.eu" { type master; file "master/db.barnim-panorama.eu"; };
+
+// zone "barnim-panorama.org" { type master; file "master/db.barnim-panorama.org"; };
+
+// zone "barnimpanorama.com" { type master; file "master/db.barnimpanorama.com"; };
+
+// zone "barnimpanorama.eu" { type master; file "master/db.barnimpanorama.eu"; };
+
+// zone "barnimpanorama.org" { type master; file "master/db.barnimpanorama.org"; };
+
+zone "agrarmuseum-wandlitz.de" { type master; file "master/db.agrarmuseum-wandlitz.de"; };
+
+//zone "gv-wandlitz.de" { type master; file "master/db.gv-wandlitz.de"; };
+
+zone "manufaktur-brandenburg.de" { type master; file "master/db.manufaktur-brandenburg.de"; };
+
+zone "targenomix.de" { type master; file "master/db.targenomix.de"; };
+
+zone "targenomix.com" { type master; file "master/db.targenomix.com"; };
+
+zone "targonomix.de" { type master; file "master/db.targonomix.de"; };
+
+zone "targonomix.com" { type master; file "master/db.targonomix.com"; };
+
+zone "targenomics.de" { type master; file "master/db.targenomics.de"; };
+
+zone "targenomics.com" { type master; file "master/db.targenomics.com"; };
+
+zone "targonomics.de" { type master; file "master/db.targonomics.de"; };
+
+zone "targonomics.com" { type master; file "master/db.targonomics.com"; };
+
+zone "ri-wandlitz.de" { type master; file "master/db.ri-wandlitz.de"; };
+
+zone "berliner-luft.berlin" { type master; file "master/db.berliner-luft.berlin"; };
+
+zone "schilkin.berlin" { type master; file "master/db.schilkin.berlin"; };
+
+zone "basdorfer-gaerten.de" { type master; file "master/db.basdorfer-gaerten.de"; };
+
+zone "mikon.de" { type master; file "master/db.mikon.de"; };
+
+zone "isys-mes.de" { type master; file "master/db.isys-mes.de"; };
+
+zone "edialog-netz.de" { type master; file "master/db.edialog-netz.de"; };
+
+
+
+### Domains von MHR GmbH - temporaer als Master bis KK durch
+### Danach bitte auf secondary umstellen und das hier lÃoeschen -- schmadde
+
+//zone "wanjek.com" { type master; file "slave/db.wanjek.com"; };
+//zone "mhro.de" { type master; file "slave/db.mhro.de"; };
+//zone "gw1.net" { type master; file "slave/db.gw1.net"; };
+
+zone "aura-it.de" { type master; file "master/db.aura-it.de"; };
+zone "aura-cs.de" { type master; file "master/db.aura-cs.de"; };
+
+### Ende MHR GmbH
+
+
+### HISTORY
+
+// $Log: zones,v $
+// Revision 1.244  2015/03/25 08:39:04  azettl
+// edialog-netz.de eingefuegt
+//
+// Revision 1.243  2015/03/16 13:31:59  azettl
+// bugapark-potsdam.de, bugapark.de, partygarten-potsdam.de, potsdams-neue-gaerten.de, volkspark-potsdam.de geloescht
+//
+// Revision 1.242  2015/03/16 11:30:14  syscall
+// das-schmeckt-meinem-hund.de und was-schmeckt-meinem-hund.de ergaenzt
+//
+// Revision 1.241  2015/01/08 20:43:29  syscall
+// add missing entry for albocha.de
+//
+// Revision 1.240  2014/12/17 09:47:40  syscall
+// Korrektur
+//
+// Revision 1.239  2014/12/17 09:44:46  syscall
+// reverse delegation fuer 2a01:a380:4408::/48 (Bytecamp)
+//
+// Revision 1.238  2014/12/15 16:25:58  mscherbinske
+// Reverse Delegation fuer Bytecamp IPv6 angepasst
+//
+// Revision 1.237  2014/12/15 13:31:26  mscherbinske
+// Slave-Konfig fuer Bytecamp erstellt
+//
+// Revision 1.236  2014/11/04 08:55:05  azettl
+//  Zonentransfer fuer diabetes-pflegeeinrichtungen.de und diabetespflegeeinrichtungen.de eingerichtet
+//
+// Revision 1.235  2014/10/07 08:53:08  azettl
+// barnim-panorama.de aktiviert
+//
+// Revision 1.234  2014/09/30 06:52:56  azettl
+// Domain isys-mes.de eingerichtet
+//
+// Revision 1.233  2014/09/29 12:25:53  azettl
+// deaktiveren aller barnim-panorama-Domains. Sind nicht bei uns.
+//
+// Revision 1.232  2014/09/29 08:04:41  azettl
+// Zonentransfer fuer emotion-in-hci.com und emotion-in-hci.net entfernt
+//
+// Revision 1.231  2014/09/19 10:47:07  azettl
+// schilkin.berlin angelegt
+//
+// Revision 1.230  2014/09/18 10:42:11  azettl
+// mikon.de hinzugefuegt
+//
+// Revision 1.229  2014/09/15 11:20:09  azettl
+// greening-rechner.de angelegt als Salve-Zone
+//
+// Revision 1.228  2014/09/05 11:05:45  azettl
+// kabelaep.de und kabeldeutschlandaep.de deaktiviert.
+//
+// Revision 1.227  2014/08/26 14:10:40  dmahnke
+// db.85.199.117 eingefuegt
+//
+// Revision 1.226  2014/08/13 10:32:44  syscall
+// Zone basdorfer-gaerten.de eingerichtet
+//
+// Revision 1.225  2014/08/06 10:37:00  syscall
+// reverse delegation von 212.204.51.0/25 und 212.204.51.128/26 an Fraunhofer
+// IGD auf Kundenwunsch deaktiviert, via M.Scherbinske
+//
+// Revision 1.224  2014/07/15 12:19:06  azettl
+// gekuendigte Domains deaktiviert
+//
+// Revision 1.223  2014/04/30 05:53:34  azettl
+// diverse veraltete Domaineintraege deaktiviert
+//
+// Revision 1.222  2014/04/01 11:05:52  syscall
+// added air-laid.eu, was missing in zones file
+//
+// Revision 1.221  2014/03/07 12:23:45  azettl
+// berliner-luft.berlin hinzugefuegt
+//
+// Revision 1.220  2014/03/03 07:37:20  azettl
+// gv-wandlitz.de geloescht
+//
+// Revision 1.219  2014/03/03 06:24:09  azettl
+// ri-wandlitz.de eingefuegt
+//
+// Revision 1.218  2014/02/25 10:24:20  syscall
+// sympol.com/net/org entfernt
+//
+// Revision 1.217  2014/01/24 07:05:52  azettl
+// usedom-jazz.de, gmd-service.de, aepservice.de, bornstedter-feld.de, vemmtec.de entfernt
+//
+// Revision 1.216  2014/01/15 13:33:03  azettl
+// Domains targenomix.de, ~.com, targonomix.de, ~.com, targenomics.de, ~.com, targonomics.de, ~.com eingerichtet
+//
+// Revision 1.215  2013/11/06 08:54:19  azettl
+// Domains deaktiviert
+//
+// Revision 1.214  2013/07/18 06:39:15  wuensch
+// vemmtec.de in /etc/zones entfernt
+//
+// Revision 1.213  2013/06/28 11:35:53  azettl
+// A-Record fuer intranet geaendert auf 10.4.18.178
+//
+// Revision 1.212  2013/06/14 07:47:23  azettl
+// gv-wandlitz.de hinzugefuegt, barnim-panorama.eu entfernt
+//
+// Revision 1.211  2013/06/12 09:56:34  syscall
+// hansel-antennenbau entfernt
+//
+// Revision 1.210  2013/05/28 10:46:51  azettl
+// bornstedter-feld.de entfernt.
+//
+// Revision 1.209  2013/03/07 08:03:18  azettl
+// marketing-club-ostmv.de geloescht
+//
+// Revision 1.208  2013/03/06 14:31:28  syscall
+// Zone e-edis.de eingetragen
+//
+// Revision 1.207  2013/02/06 10:28:13  wuensch
+// zones geaendert
+//
+// Revision 1.206  2013/02/06 10:25:52  wuensch
+// zones geaendert
+//
+// Revision 1.205  2013/02/06 10:13:19  wuensch
+// db.2a01:a380:4408 hinzugefuegt
+//
+// Revision 1.204  2013/02/01 10:41:56  syscall
+// add netfox reverse delegation
+//
+// Revision 1.203  2013/01/19 22:59:11  syscall
+// add sysmall.de as syscall spamtrap domain
+//
+// Revision 1.202  2013/01/18 13:03:52  syscall
+// add syscall spamtrap domain "ide2scsi.de"
+//
+// Revision 1.201  2013/01/09 08:43:30  azettl
+// grarmuseum-wandlitz.de angelegt
+//
+// Revision 1.200  2013/01/04 08:58:40  eott
+// Datum: 04.01.2013
+// Autor: Eiko Ott
+// Bemerkung: Reverse Zone fuer db.85.199.112 eingetragen.
+//
+// Revision 1.199  2012/12/18 11:49:12  azettl
+// barnimpanorma.com, ~.eu, ~.org, barnim-panorama.com, ~.eu, ~.org hinzugefuegt
+//
+// Revision 1.198  2012/12/17 12:22:05  azettl
+// barnim-panorama.de und barnimpanormaa.de eingerichtet
+//
+// Revision 1.197  2012/12/06 10:17:52  syscall
+// syntax error korrigiert
+//
+// Revision 1.196  2012/12/06 10:14:47  syscall
+// schmad.de mit hidden primary; bogus syscall zones entfernt
+//
+// Revision 1.195  2012/11/30 13:09:23  azettl
+// e-disag.eu
+// e-disag.net
+// e-disag.org
+// e-disag.biz
+// edis-ag.eu
+// edis-ag.net
+// edis-ag.org
+// edis-ag.biz
+// hinzugefuegt
+//
+// Revision 1.194  2012/11/28 09:47:59  azettl
+// e-dis.ag
+// edis.ag
+// e-disag.de
+// e-disag.com
+// edis-ag.de
+// edis-ag.com
+//
+// hinzugefuegt
+//
+// Revision 1.193  2012/11/26 14:00:31  azettl
+// Domains diabetes-pflege-akademie.de und diabetespflegeakademie hinzugefuegt.
+//
+// Revision 1.192  2012/11/26 13:47:39  azettl
+// Domains sensysmagnetometers.com, sensysonline.com und sensysglobal.com hinzugefuegt.
+//
+// Revision 1.191  2012/10/30 09:27:19  syscall
+// reverse Zone fuer 85.199.116 eingetragen
+//
+// Revision 1.190  2012/10/23 07:03:31  azettl
+// anco.pl hinzugefuegt
+//
+// Revision 1.189  2012/10/17 12:48:20  shuebner
+// stadtwerke-luckenwalde.de und stadtwerke-luckenwalde.com hinzugefuegt
+//
+// Revision 1.188  2012/10/09 10:01:26  syscall
+// IPv6 reverse zones neue Dateinamen
+//
+// Revision 1.187  2012/09/28 16:40:56  syscall
+// add e.discom IPv6 reverse zone; drop old bogus syscall zones
+//
+// Revision 1.186  2012/08/16 12:34:29  azettl
+// adebton.de und adebton.com hinzugefuegt
+//
+// Revision 1.185  2012/08/10 18:55:18  syscall
+// Tippfehler fuer reverse zone 212.204.43 korrigiert
+//
+// Revision 1.184  2012/08/07 10:03:11  azettl
+// sensys.de aktiviert
+//
+// Revision 1.183  2012/08/04 14:07:36  syscall
+// Reverse Zone 43.204.212.in-addr.arpa. hinzugefuegt
+//
+// Revision 1.182  2012/07/31 09:34:54  wuensch
+// db.82.193.236 eingetragen
+//
+// Revision 1.181  2012/07/02 07:39:25  azettl
+// sensys.de deaktiviert, da Domain noch nicht bei uns
+//
+// Revision 1.180  2012/06/29 11:19:22  syscall
+// syntax error bei sensys.de korrigiert
+//
+// Revision 1.179  2012/06/29 11:18:06  syscall
+// sensys.de hinzugefuegt
+//
+// Revision 1.178  2012/06/12 11:18:28  azettl
+// xyberscout.de entfernt
+//
+// Revision 1.177  2012/06/12 11:12:27  azettl
+// mmh-mv.de und mmhmv.de als Slave konfiguriert
+//
+// Revision 1.176  2012/06/07 06:54:33  azettl
+// mmhmv.de und mmh-mv.de angelegt
+//
+// Revision 1.175  2012/05/11 12:01:33  azettl
+// ostsee-zeitung.de entfernt
+//
+// Revision 1.174  2012/05/11 07:38:24  azettl
+// classless reverse delegation fuer ostseezeitung entfernt (144/28.48.204.212.in-addr.arpa)
+//
+// Revision 1.173  2012/05/11 07:10:49  azettl
+// bauxpert-schnepf.de geloescht
+//
+// Revision 1.172  2012/03/01 12:05:09  azettl
+// halbesonnen.de hinzugefuegt
+//
+// Revision 1.171  2012/01/26 09:37:51  wuensch
+// stralsund.de auskommentiert
+//
+// Revision 1.170  2012/01/06 11:33:30  azettl
+// Domain netz-wind.de eingetragen
+//
+// Revision 1.169  2011/12/16 11:51:42  azettl
+// drei Katana-Domains wieder aktiviert
+//
+// Revision 1.168  2011/12/07 07:29:36  azettl
+// Katana-Domains deaktiviert.
+//
+// Revision 1.167  2011/11/17 11:59:27  azettl
+// Domains e-wiga.de, ewiga.de, e-triga.de u. etriga.de registriert.
+//
+// Revision 1.166  2011/10/26 09:49:23  wuensch
+//  85.199.76 hinzugefuegt
+//
+// Revision 1.165  2011/09/19 12:57:45  azettl
+// mmh-media.com
+// mmhmedia.com
+// mmh-media-vermarktung.de
+// mmh-mediavermarktung.de
+// mmhmediavermarktung.de
+//
+// eingefuegt
+//
+// Revision 1.164  2011/08/30 05:49:00  azettl
+// Secondar Zones fuer MOZ von oranienburger-generalanzeiger.de bis oberhavel-zeitung.de eingerichtet
+//
+// Revision 1.163  2011/08/29 08:59:01  azettl
+// input-catering.de geloescht.
+//
+// Revision 1.162  2011/07/07 09:16:12  syscall
+// Zonefile Name geaendert, fuer konsistente Dateinamen
+//
+// Revision 1.161  2011/07/06 12:14:46  syscall
+// zone 84.199.85.in-addr.arpa nicht mehr master, sondern slave von
+// ns.data-experts.de (reverse delegation)
+//
+// Revision 1.160  2011/07/05 14:34:34  dmahnke
+// ensys.de hinzugefuegt
+// CVn ----------------------------------------------------------------------
+//
+// Revision 1.159  2011/07/01 14:09:32  azettl
+// neue IP fuer Zonentransfer von data-experts.de eingetragen
+//
+// Revision 1.158  2011/06/24 13:11:38  azettl
+// 13 Domains fuer data experts gmbh als secondary eingerichtet
+//
+// Revision 1.157  2011/05/17 12:54:46  azettl
+// Domains ihrwindservice.de, windundnetz.de und windundnetzservice.de hinzugefuegt.
+//
+// Revision 1.156  2011/05/11 08:52:43  dmahnke
+// biberburg-online.de hinzugefuegt
+//
+// Revision 1.155  2011/03/30 08:48:49  azettl
+// alldry.de, ~eu, all-dry.de, ~.eu eingefuegt.
+//
+// Revision 1.154  2011/03/29 12:21:27  azettl
+// eon-best-service.de, ~.com, eon-bestservice.de, ~.com geloescht.
+//
+// Revision 1.153  2011/03/29 12:19:28  azettl
+// eon-bestservice.de, ~.com; eon-best-service.de, ~.com geloescht.
+//
+// Revision 1.152  2011/03/25 15:24:26  azettl
+// arikon-genshagen.de eingefuegt.
+//
+// Revision 1.151  2011/03/11 13:40:32  azettl
+// b54.de geloescht.
+//
+// Revision 1.150  2011/02/24 12:20:07  azettl
+// ./master/db.potsdamer-marketingtag.de
+// ./master/db.marketing-in-brandenburg.de
+// ./master/db.potsdamer-dezemberball.de
+// eingefuegt.
+//
+// Revision 1.149  2011/01/27 10:05:58  azettl
+// pods-blitz.de und podz-blitz.de in pots-blitz.de und potz-blitz.de umbenannt
+//
+// Revision 1.148  2011/01/26 14:03:28  azettl
+// Domains zone pre-inkasso.de u. preinkasso.de eingetragen
+//
+// Revision 1.147  2011/01/21 12:41:10  azettl
+// Domains pacour.de, pakour.de, pods-blitz.de und podz-blitz.de eingerichtet
+//
+// Revision 1.146  2011/01/06 16:02:50  syscall
+// Anpassungen vom laufenden Nameserver nachgezogen
+//
+// Revision 1.145  2010/12/22 12:12:27  azettl
+// mc-potsdam.de angelegt.
+//
+// Revision 1.144  2010/12/13 11:45:50  azettl
+// kreis-pm.de, lkpm.de, potsdam-mittelmark.info, potsdam-mittelmark.org hinzugefuegt.
+//
+// Revision 1.143  2010/12/10 13:48:43  azettl
+// paketo-mobile.de und ~.com eingerichtet.
+//
+// Revision 1.142  2010/09/28 06:42:28  azettl
+// adolisa.com deaktiviert.
+//
+// Revision 1.141  2010/09/23 05:02:02  azettl
+// Adresse des DNS der MOZ von 145.253.160.190 auf 82.193.249.20
+//
+// Revision 1.140  2010/09/02 08:37:00  azettl
+// Secondary Zones fuer MOZ eingerichtet
+//
+// Revision 1.139  2010/09/02 07:35:44  azettl
+// Reverse-Zone 249.193.82.in-addr.arpa eingerichtet.
+//
+// Revision 1.138  2010/07/21 11:52:38  azettl
+// Domains eon-windservice.de, ~.com, e-windservice.de, ~.com eingerichtet.
+//
+// Revision 1.137  2010/07/20 11:56:54  azettl
+// eon-edis-windservice.de und ~.com eingerichtet
+//
+// Revision 1.136  2010/06/17 09:18:33  dmahnke
+// andreaskraft.com auskommentiert
+//
+// Revision 1.135  2010/04/23 09:42:01  azettl
+// input-catering.de angelegt.
+//
+// Revision 1.134  2010/04/12 09:54:04  azettl
+// k-r-a-f-t.com geloescht
+//
+// Revision 1.133  2010/04/06 08:40:09  azettl
+// Domains: edis-contracting.com, edis-contracting.de, eon-edis-contracting.com, eon-edis-contracting.de hinzugefuegt.
+//
+// Revision 1.132  2010/03/03 12:54:51  azettl
+// bauxpert-schnepf.de eingerichtet
+//
+// Revision 1.131  2010/02/23 14:47:12  azettl
+// Domain totalfinaelf-service.de geloescht.
+//
+// Revision 1.130  2010/02/19 13:11:52  syscall
+// peterkubin.de,.com geloescht
+//
+// Revision 1.129  2010/02/17 12:55:37  mscherbinske
+// Reverse-Delegation fuer 212.204.39.0/24 eingetragen------------------------
+//
+// Revision 1.128  2010/02/17 08:42:41  azettl
+// betterform.de angelegt.
+//
+// Revision 1.127  2010/02/09 11:38:46  azettl
+// Domains achtvorort.de, acht-vor-ort.de, 8vorort.de und 8-vor-ort.de hinzugefuegt.
+//
+// Revision 1.126  2010/02/01 09:42:18  syscall
+// Datei repariert, war kaputt mit CVS conflicts
+//
+// Revision 1.124  2010/01/28 14:30:20  azettl
+// sabinchenautomaten.de eingerichtet
+//
+// Revision 1.123  2010/01/21 13:24:23  syscall
+// Korrekten Master fuer 128-26.51.204.212.in-addr.arpa (Fraunhofer HRO) eingetragen
+//
+// Revision 1.122  2010/01/06 07:37:26  azettl
+// gymnabeel.de geloescht
+//
+// Revision 1.121  2010/01/05 14:24:55  azettl
+// 38.204.212.in-addr.arpa aktiviert
+//
+// Revision 1.120  2010/01/05 14:23:34  azettl
+// 38.204.212.in-addr-arpa deaktiviert
+//
+// Revision 1.119  2010/01/05 10:52:01  azettl
+// 38.204.212.in-addr.arpa zur secondary zone gemacht
+//
+// Revision 1.118  2010/01/05 09:01:20  azettl
+// esys-nachhaltigketischeck.de eingerichtet
+//
+// Revision 1.117  2009/12/15 14:05:38  syscall
+// 224/27 nach 224-27 geaendert, weil variomedia keinen / erlaubt
+//
+// Revision 1.116  2009/12/15 10:59:42  syscall
+// classless reverse delegation fuer potsdam-mittelmark.de eingetragen
+//
+// Revision 1.115  2009/12/10 13:17:55  azettl
+// secondary fuer potsdam-mittelmark.de eingetragen
+//
+// Revision 1.114  2009/11/25 09:07:55  azettl
+// dombert.de eingerichtet
+//
+// Revision 1.113  2009/11/12 12:08:09  azettl
+// fivepointsix.de geloescht.
+//
+// Revision 1.112  2009/11/11 15:08:00  syscall
+// Master IP Addresse fuer fhg-rostock 0/25.51.204.212.in-addr.arpa aktualisiert
+// lt. Ticket vom 11.11.09 Mahnke/O.Friedrich
+//
+// Revision 1.111  2009/11/11 14:01:53  azettl
+// udk.de und 5punkt6.de geloescht.
+//
+// Revision 1.110  2009/11/02 14:16:32  mscherbinske
+// Fehler in db.smea-access beseitigtCVS: ----------------------------------------------------------------------
+//
+// Revision 1.109  2009/10/29 10:00:58  mscherbinske
+// Eintrag fuer primaeres Zonefile db.smea-access.de auskommentiert
+//
+// Revision 1.108  2009/10/29 09:50:02  mscherbinske
+// Slave-Zone fuer smea-access.de eingerichtetCVS: ----------------------------------------------------------------------
+//
+// Revision 1.107  2009/09/24 13:04:19  azettl
+// kraftwerk-rostock.com und kraftwerk-rostock.net angelegt.
+//
+// Revision 1.106  2009/09/22 06:38:30  azettl
+// zonrfile fuer 85.199.75 hinzugefuegt.
+//
+// Revision 1.105  2009/09/18 07:57:16  azettl
+// sexualwissenscahften.net geloescht.
+//
+// Revision 1.104  2009/09/18 07:53:00  azettl
+// willy-brandt.de und ~.org geloescht.
+//
+// Revision 1.103  2009/09/14 07:16:21  azettl
+// reverse-Zones fuer 85.199.72 u. 85.199.73 jetzt bei ARCHE Netvision (ns1.dov.net, ns2.dov.net)
+//
+// Revision 1.102  2009/09/11 09:14:00  azettl
+// 72.199.85 und 73.199.85 auf secondary umgestellt.
+//
+// Revision 1.101  2009/09/04 12:36:54  azettl
+// ole-johannes.de geloescht.
+//
+// Revision 1.100  2009/09/03 14:04:01  mscherbinske
+// db.85.199.72 angelegtCVS: ----------------------------------------------------------------------
+//
+// Revision 1.99  2009/08/27 13:44:06  azettl
+// aura-it.de und aura-cs.de als master aktiviert fuer Domaintransfer
+//
+// Revision 1.98  2009/08/27 13:10:12  azettl
+// Kommentarzeile unter aura-cs.de korrigert.
+//
+// Revision 1.97  2009/08/27 13:08:59  azettl
+// aura-it.de und aura-cs.de temporaer fuer Zonentransfer aktiviert.
+//
+// Revision 1.96  2009/08/27 12:31:05  syscall
+// aura-it.de temporaer als slave, um aktuelle Zonefile Daten zu ziehen
+//
+// Revision 1.95  2009/07/29 13:11:20  syscall
+// MHR master auch auskommentiert
+//
+// Revision 1.94  2009/07/29 13:10:44  syscall
+// Vorbereitung fuer MHR Domains
+//
+// Revision 1.93  2009/07/21 11:50:33  wuensch
+//  e-inkasso-gmbh.de und energie-inkasso.de eingetragen
+//
+// Revision 1.92  2009/07/15 06:40:11  azettl
+// spaninglish.com, ~.net, ~.org geloescht.
+//
+// Revision 1.91  2009/07/14 05:35:42  azettl
+// eon-edisenergia.pl und edis-energia.pl deaktiviert. Neue DNS dns.home.pl und dns2.home.pl.
+//
+// Revision 1.90  2009/07/03 08:47:23  azettl
+// ifr-regelungstechnik und ifr-gebaeudemanagemen entfernt.
+//
+// Revision 1.89  2009/06/30 09:42:50  azettl
+// ciscokabel.de deaktiviert
+//
+// Revision 1.88  2009/06/30 09:41:14  azettl
+// ai-comp.de, ai-com.net, ciscokabel.de geloescht
+//
+// Revision 1.87  2009/06/04 09:44:07  azettl
+// fuer Transfer wieder aktiviert.
+// CV : ----------------------------------------------------------------------
+//
+// Revision 1.86  2009/06/04 07:22:45  azettl
+// Transfer fehlgeschlagen -> vorlaeufige Deaktivierung
+//
+// Revision 1.85  2009/06/03 12:41:57  azettl
+// visilase.com aktiviert
+//
+// Revision 1.84  2009/06/03 07:15:03  azettl
+// ifr-regelungstechnik.de deaktiviert.
+//
+// Revision 1.83  2009/05/26 08:44:32  azettl
+// visilase.com deaktiviert.
+//
+// Revision 1.82  2009/05/15 11:26:18  azettl
+// visilase.com hinzugefuegt.
+//
+// Revision 1.81  2009/04/30 08:28:20  azettl
+// hugo-serna.de deaktiviert
+//
+// Revision 1.80  2009/04/09 07:34:40  wuensch
+// speedline-coity erstellt
+//
+// Revision 1.79  2009/04/09 07:25:26  wuensch
+// 212.204.44 geandert
+//
+// Revision 1.78  2009/04/01 12:59:08  syscall
+// brandenburger-blaeserkreis.de geloescht, Domain liegt woanders
+//
+// Revision 1.77  2009/03/26 10:26:00  azettl
+// kulturverein-wolgast.de geloescht
+//
+// Revision 1.76  2009/03/26 10:21:52  azettl
+// bundesvermoegensamt-potsadm.de geloescht.
+//
+// Revision 1.75  2009/03/25 15:30:34  syscall
+// meine-kantine.de gelÃ¤scht
+//
+// Revision 1.74  2009/03/25 11:59:01  azettl
+// sbl-gmbh.eu eingetragen
+//
+// Revision 1.73  2009/03/05 08:38:50  azettl
+// nanue-deko.de auskommentiert. Domain wird geloescht.
+//
+// Revision 1.72  2009/02/27 10:52:00  azettl
+// art-cube.de auskommentiert
+//
+// Revision 1.71  2009/02/26 13:46:57  syscall
+// div. alte Zonen geloescht (Aufraeumen bei LAMP Umzug)
+//
+// Revision 1.70  2009/02/20 09:54:01  azettl
+// chiba-project.org angelegt
+//
+// Revision 1.69  2009/01/13 15:28:42  wuensch
+//  zone db.82.193.242 hin zu gefuegt
+//
+// Revision 1.68  2008/12/10 12:56:56  azettl
+// Fehler in zones bei Eintrag fuer speedbrbmv.de korrigiert.
+//
+// Revision 1.67  2008/12/10 12:54:37  azettl
+// speedbrbmv.de fuer uns und partygarten-potsdam.de fuer Entwicklungsträger Bornstedt eingerichtet.
+//
+// Revision 1.66  2008/10/10 11:00:25  azettl
+// enerline.de hinzugefuegt
+//
+// Revision 1.65  2008/09/04 15:54:43  azettl
+// Domains vergessen, in zones einzutragen
+//
+// Revision 1.64  2008/08/28 19:21:03  wuensch
+// .37 einetragen
+//
+// Revision 1.63  2008/08/28 19:08:48  wuensch
+// 2CVS: ----------------------------------------------------------------------
+//
+// Revision 1.62  2008/08/28 18:57:42  wuensch
+// db.21.204.36
+//
+// Revision 1.61  2008/08/28 18:39:14  wuensch
+// master zone eon-edis.com eon-edis.net eonedis.com eingetragen
+//
+// Revision 1.60  2008/08/28 14:25:44  wuensch
+// zone eonedis.net eingetragen
+//
+// Revision 1.59  2008/08/28 13:24:17  wuensch
+// CVSlog e-dis eon-edi.de eingetragen
+// : ----------------------------------------------------------------------
+//
+// Revision 1.58  2008/08/28 12:42:15  wuensch
+// zone edistherm energienord geaendert
+//
+// Revision 1.57  2008/08/28 12:10:40  wuensch
+// master zone energienord.de eingetragen
+//
+// Revision 1.56  2008/08/28 06:59:22  wuensch
+// zone eonedis master eingetragen
+//
+// Revision 1.55  2008/08/27 20:00:15  wuensch
+// edisnatur eingetragenCVS: ----------------------------------------------------------------------
+//
+// Revision 1.54  2008/06/25 07:21:03  mscherbinske
+// Tippfehler in Zonenfile fuer kabeldeutschlandaep.de beseitigtCVS: ----------------------------------------------------------------------
+//
+// Revision 1.53  2008/06/19 14:02:30  mscherbinske
+// Zonen psgservice.de, kabelaep.de u. kabeldeutschlandaep.de angelegtCVS: ----------------------------------------------------------------------
+//
+// Revision 1.52  2008/06/19 06:29:46  mscherbinske
+// Zonen stadtwerke-stralsund.de u. nahverkehr-stralsund.de geloeschtCVS: ----------------------------------------------------------------------
+//
+// Revision 1.51  2008/06/17 10:46:25  wuensch
+// pluecjhahnservice.de gesperrtCVS: ----------------------------------------------------------------------
+//
+// Revision 1.50  2008/06/12 11:53:42  wuensch
+// eon-bestservice eon-best-service de und com eingetragen
+//
+// Revision 1.49  2008/06/06 08:54:44  wuensch
+// *** empty log message ***
+//
+// Revision 1.48  2008/06/06 08:17:34  wuensch
+// *** empty log message ***
+//
+// Revision 1.47  2008/06/02 12:32:08  syscall
+// ask-brb.de zur named.conf hinzugefuegt
+//
+// Revision 1.46  2008/05/22 13:38:29  wuensch
+// acalis.de accounting-systems.de, avf.de, bautreff-schnepf.de,hausdesostens.de, hdo-online.de,
+// informatikjahr-in-mv.de, john-brinckman-keller.de, luxoom.de, luxoom.com, schnepf-baustoffe.de,
+// schwolowdesign.de, spider-business.de, x4t.de, zgdv-r.de geloescht - Andreas Wuensch
+//
+// Revision 1.45  2008/04/15 11:25:35  azettl
+// eon-edis-pl auf wunsch von gebauer neu angelegt.
+//
+// Revision 1.44  2008/04/11 12:22:10  azettl
+// eon-edis.pl wird von der edis selbst verwaltet -> entfernt.
+//
+// Revision 1.43  2008/03/12 10:44:31  dmahnke
+// movie-car.com erstellt
+//
+// Revision 1.42  2008/01/28 12:38:01  mscherbinske
+// Zone aepservice.de angelegtCVS: ----------------------------------------------------------------------
+//
+// Revision 1.41  2008/01/28 10:05:40  mscherbinske
+// Eintrag fuer informatikjahr-in-mv.de geloeschtCVS: ----------------------------------------------------------------------
+//
+// Revision 1.40  2007/12/21 06:18:01  wuensch
+// Wikom Slave ----------------------------------------------------------------------
+// escht
+//
+// Revision 1.39  2007/12/20 14:25:20  syscall
+// Classless Reverse Delegation fuer fraunhofer angepasst, weil variomedia keinen /
+// im Domainname erlaubt. Bei Ostseezeitung schonmal dafuer vorbereitet.
+//
+// Revision 1.38  2007/11/20 11:14:12  wuensch
+// zonefile erstellt andreas wuensch
+//
+// Revision 1.37  2007/10/23 12:04:50  dmahnke
+// schwolowdesign.de geloescht
+//
+// Revision 1.36  2007/10/22 08:22:13  syscall
+// primary auf ns1.ica-net.de geaendert
+//
+// Revision 1.35  2007/09/21 13:01:27  azettl
+// Slave-Zone fuer 45.204.212.in-addr.arpa (Stadtwerke Oranienburg) eingerichtet
+//
+// Revision 1.34  2007/08/15 13:34:42  azettl
+// Domains e-inkasso-potsdam.de und ~.com eingerichtet
+//
+// Revision 1.33  2007/08/02 08:58:36  wuensch
+// CVnteintraege in db.schnepf-baustoffe.de entfernt andreas wuensch
+// rS: ----------------------------------------------------------------------
+//
+// Revision 1.32  2007/07/20 05:47:15  wuensch
+// db.212.204.46 erstellt Andreas Wuensch
+//
+// Revision 1.31  2007/07/03 11:44:42  azettl
+// viasolution.net und anecom.de aktiv
+//
+// Revision 1.30  2007/06/27 10:44:35  azettl
+// DNS Probleme bei viasolution -> Zonen vorläufig entfernt
+//
+// Revision 1.29  2007/06/27 09:08:52  azettl
+// anecom.de und viasolution.net hinzugefuegt
+//
+// Revision 1.28  2007/06/05 08:30:19  azettl
+// Domains hinzugefuegt aus Kopie von db.edisenergia.pl
+//
+// Revision 1.27  2007/05/24 11:12:49  azettl
+// Zone luknet.de hinzugefuegt.
+//
+// Revision 1.26  2007/02/07 09:23:43  wuensch
+// mati-gmbh.de hinzugefuegt
+//
+// Revision 1.25  2007/01/09 08:21:27  mscherbinske
+// neues Kundennetz eingetragen
+// D
+// CVSi ----------------------------------------------------------------------
+//
+// Revision 1.24  2007/01/02 13:11:12  azettl
+// eon-edis-netz.de und .com erneut aktivert. Offensichtlich werden die KKs von E.ON Energie doch erlaubt.
+//
+// Revision 1.23  2006/12/21 09:41:43  azettl
+// eon-edis-netz.x auskommentiert. Der Domaintransfer wird von E.ON Energie nicht gewohlt. Klärung erfolgt in 2007.
+//
+// Revision 1.22  2006/12/21 09:29:00  wuensch
+// db.212.204.47 erstellt A. Wuensch
+//
+// Revision 1.21  2006/12/19 08:54:13  azettl
+// zonen fuer eon-edis-netz.de und .com eingefuegt.
+//
+// Revision 1.20  2006/11/16 13:35:28  dmahnke
+// sear-gmbh.de eingetragen--------------------------------------------------------------
+//
+// Revision 1.19  2006/09/15 12:07:21  syscall
+// domains bootsurlaub-mv.de ferienspiele.com freizeitspass-verchen.de
+// geloescht, auf Anforderung A.Zettl
+//
+// Revision 1.18  2006/08/30 07:13:06  dmahnke
+// zonefile fuer ediscom.eu erstellt------------------------------------------
+//
+// Revision 1.17  2006/08/18 11:16:54  syscall
+// binz-kabel.net auf sekundaere Zone umgestellt, primaerer Nameserver
+// beim Kunden
+//
+// Revision 1.16  2006/07/05 08:20:20  wuensch
+// ereverse zonen fuer rftonline VS: ----------------------------------------------------------------------
+//
+// Revision 1.15  2006/07/04 08:59:13  azettl
+// Domain angelegt.
+//
+// Revision 1.14  2006/06/21 07:38:59  azettl
+// ai-comp.de und ai-comp.net fuer syscall eingefuegt.
+//
+// Revision 1.13  2006/06/20 12:27:42  azettl
+// 23 Doamins fuer Concert GmbH eingefuegt. concert.de ist die Hauptdomain, alle anderen verweisen darauf
+//
+// Revision 1.12  2006/06/15 14:00:57  dmahnke
+// 15.06.2006 - Dietmar Mahnke: zone cnd.de geloescht
+//
+// Revision 1.11  2006/06/14 13:28:23  wuensch
+// reverse zonen 82.193.244-47 + Stralsund.eu eingetragen
+//
+// Revision 1.10  2006/06/02 11:29:42  azettl
+// das-bett.de geloescht
+//
+// Revision 1.9  2006/05/19 12:54:36  dmahnke
+// 19.05.2006 - Dietmar Mahnke: kulturverein-wolgast.de eingetragen-----------
+//
+// Revision 1.8  2006/05/17 15:29:25  syscall
+// canias.net Eintrag zu den anderen syscall Domains verschoben.
+//
+// Revision 1.7  2006/05/16 12:08:28  azettl
+// Domain canias.net angelegt
+//
+// Revision 1.6  2006/05/08 08:48:20  syscall
+// lgrb.de geloescht.
+//
+// Revision 1.5  2006/05/04 07:54:48  syscall
+// sbb.mbh.de geloescht.
+//
+// Revision 1.4  2006/04/25 13:58:07  syscall
+// Aenderungen auf altem Nameserver seit Ende Maerz nachgezogen.
+//
+// Revision 1.3  2006/04/13 12:03:05  syscall
+// fixed syntax error (";" comment with "$" following)
+//
+// Revision 1.2  2006/04/13 11:57:14  syscall
+// minor fixes (syntax errors etc)
+//
+// Revision 1.1  2006/04/04 17:01:12  syscall
+// named.conf erstellt, zones Datei aus alter named.conf erstellt, suse default
+// for reference
+
+
+// -- alte log-Eintraege geloscht 1.3.06 schmadde.
+// 02.01.06 Milan Scherbinske: IP fuer aepnet.de angepasst
+// 04.01.06 Milan Scherbinske: Reverseeintrag fuer mail2.aepnet.de eingetragen
+// 11.01.06 Milan Scherbinske: ostsee-stellen.de, ostsee-flirt.de, oz-dialog.de,ostsee-jobs.de, ostsee-autos.de, rostock-am-sonntag.de, olymp-club-rostock.de, olympclubrostock.de, stralsundersonntag.de, stralsunder-sonntag.de, rostocker-sonntag.de, rostockersonntag.de, urlaubslotse.de geloescht
+// 12.01.06 Milan Scherbinske: sec fuer ostsee-zeitung.de eingetragen
+// 12.01.06 Milan Scherbinske: IP fuer mail.fas-tv.de geaendert
+// 13.01.06 Milan Scherbinske: 3 neue DNS fuer Transfer freigegeben
+// 10.02.06 Milan Scherbinske: argus-haus.de eingetragen
+// 11.02.06 Andreas Wuensch: transfer 141.1.127.128 eingetragen
+// 13.02.06 Dietmar Mahnke: wandlitz.de eingetragen 
+// 14.02.06 Milan Scherbinske: PTR fuer Telegate eingetragen
+// 14.02.06 Milan Scherbinske: www.informatikjahr-in-mv.de eingetragen
+// 15.02.06 Andreas Wuensch: netzservice-mv.de eingetragen
+// 17.02.06 Milan Scherbinske: informatik-in-mv.de eingetragen
+// 21.02.06 Milan Scherbinske: sec fuer informatikjahr-in-mv.de u. informatik-in-mv.de eingetragen
+// 10.03.06 Andreas Zettl: meducase.de eingetragen
+// 21.03.06 Milan Scherbinske: IP fuer webmail.stadtwerke-stralsund.de geaendert
+// 28.03.06 Milan Scherbinske: mare-haus.de u. marehaus.de eingetragen
+// 06.04.06 Andreas Zettl: krm-online.de eingetragen
+// 06.04.06 Andreas Wuensch: 241.193.82.in-addr.arpa eingetragen
+// 11.04.06 Milan Scherbinske: PTR fuer SW-Prenzlau eingetragen
+

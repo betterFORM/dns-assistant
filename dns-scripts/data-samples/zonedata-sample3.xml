@@ -1,0 +1,7 @@
+    <zone origin="schmad.de" type="slave" zonetype="forward" file="">
+      <masters>
+	<master>88.198.171.238</master>
+      </masters>
+      <!-- no zonedata, thus no zonefile gets written -->
+      <zonedata/>
+    </zone>
