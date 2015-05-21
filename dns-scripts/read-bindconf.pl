@@ -5,22 +5,21 @@
 
 # Read BIND9 zone config data and zonefiles and write them to STDOUT as an 
 # XML data structure conforming to the zones node in data-samples/data.xml
-#
-# initial version, zonefiles are not parsed yet
 
 
 use strict;
 use warnings;
 
 use Data::Dumper;
+use Net::DNS::ZoneFile;
 use XML::Simple;
 
-my $VERSION = '0.1';
+my $VERSION = '0.2';
 
 my $ZONES = { 'zones' => [] };
 
 my $zones_in = "data-samples/zones-samplefile";
-my $zonefile_dir = "data-samples/master";
+my $zonefile_base = "data-samples/";
 
 my $rawzones;
 open(ZF, $zones_in) or die "failed to open zones file: $!";
@@ -92,6 +91,68 @@ sub parse_zoneconf {
 	    print $conf;
 	}
     }
+
+    # fill zonedata element
+    if ($out->{type} eq 'master') {
+	$out->{zonedata} = parse_zonefile($zone, $out->{file});
+    }
+
+    $out;
+}
+
+
+sub parse_zonefile {
+    my ($zone, $file) = @_;
+    my $out = { rr => [] };
+    my $zfname = ${zonefile_base} . $file;
+    # XXX check err
+    my $zonefile = new Net::DNS::ZoneFile($zfname, $zone);
+
+    $out->{ttl} = $zonefile->ttl if $zonefile->ttl;
+
+    my ($rr, $rrref);
+    my $id = 1;
+    while ($rr = $zonefile->read) {
+	if ($rr->type eq 'SOA') {
+	    $out->{mname}   = $rr->mname;
+	    $out->{rname}   = $rr->rname;
+	    $out->{serial}  = $rr->serial;
+	    $out->{refresh} = $rr->refresh;
+	    $out->{retry}   = $rr->retry;
+	    $out->{expire}  = $rr->expire;
+	    $out->{minimum} = $rr->minimum;
+	} else {
+	    $rrref = { id => "id${id}", owner => $rr->owner, 
+		       type => $rr->type, ttl => $rr->ttl };
+	    if ($rr->type eq 'NS') {
+		$rrref->{val} = $rr->nsdname;
+	    } elsif ($rr->type eq 'MX') {
+		$rrref->{val} = $rr->exchange;
+		$rrref->{prio} = $rr->reference;
+	    } elsif ($rr->type eq 'A') {
+		$rrref->{val} = $rr->address;
+	    } elsif ($rr->type eq 'AAAA') {
+		$rrref->{val} = $rr->address_short;
+	    } elsif ($rr->type eq 'SPF') {
+		$rrref->{val} = $rr->spfdata;
+	    } elsif ($rr->type eq 'TXT') {
+		$rrref->{val} = $rr->txtdata;
+	    } elsif ($rr->type eq 'SRV') {
+		$rrref->{prio}   = $rr->priority;
+		$rrref->{weight} = $rr->weight;
+		$rrref->{port}   = $rr->port;
+		$rrref->{val}    = $rr->target;
+	    } elsif ($rr->type eq 'PTR') {
+		$rrref->{val} = $rr->ptrdname;
+	    } else {
+		print "UNRECOGNIZED RR TYPE: ", $rr->type, "\n";
+	    }
+	    
+	    push(@{$out->{rr}}, $rrref);
+	    $id++;
+	}
+    }
+
     $out;
 }
 
