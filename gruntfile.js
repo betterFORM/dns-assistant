@@ -274,7 +274,8 @@ module.exports = function (grunt) {
                     'bower_components/admin-lte/dist/js/app.js',
                     'bower_components/font-awesome/css/**',
                     'bower_components/font-awesome/fonts/**',
-                    'bower_components/jquery/dist/**'
+                    'bower_components/jquery/dist/**',
+                    'bower_components/materialize/dist/**'
                 ],
                 dest: 'build/<%=xar.name%>-<%=xar.version%>.xar'
             },

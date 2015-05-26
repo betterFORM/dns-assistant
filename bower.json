@@ -16,6 +16,7 @@
     "bootstrap": ">= 3.3.4",
     "animate.css": ">= 3.2.6",
     "admin-lte": "~2.1.1",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "materialize": "~0.96.1"
   }
 }

@@ -1,20 +1,20 @@
-    <zone origin="albocha.de" type="master" zonetype="forward"
-	  file="db.albocha.de">
-      <masters/>
-      <!-- data from the zonedata tag goes into the zonefile -->
-      <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." 
-		serial="2015010800" refresh="28800" retry="7200" 
-		expire="604800" minimum="86400" ttl="86400">
-	<!-- rr elements need a unique id -->
-	<rr id="id1" owner="albocha.de" type="NS"            val="ns1.ediscom.de." />
-	<rr id="id2" owner="albocha.de" type="NS"            val="ns4.variomedia.de." />
-	<rr id="id3" owner="albocha.de" type="MX" prio="10"  val="webmail.ediscom.de." />
-	<rr id="id4" owner="albocha.de" type="MX" prio="100" val="mail2.ediscom.de." />
-	<rr id="id5" owner="albocha.de" type="TXT"           val="google-site-verification=..." />
-	<rr id="id6" owner="albocha.de" type="TXT"           val="&quot;v=spf1 ip4:212.204.63.101 -all&quot;" />
-	<rr id="id7" owner="albocha.de" type="SPF"           val="&quot;v=spf1 ip4:212.204.63.101 -all&quot;" />
-	<rr id="id8" owner="www" type="A"           val="212.204.63.101" />
-	<rr id="id9" owner="www" type="AAAA"        val="2001:6f8:132c:100::def1" ttl="300"/>
-	<rr id="id10" owner="ftp" type="CNAME"       val="www.albocha.de." />
-      </zonedata>
-    </zone>
+<zone origin="albocha.de" type="master" zonetype="forward"
+        file="db.albocha.de">
+    <masters/>
+    <!-- data from the zonedata tag goes into the zonefile -->
+    <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de."
+            serial="2015010800" refresh="28800" retry="7200"
+            expire="604800" minimum="86400" ttl="86400">
+        <!-- rr elements need a unique id -->
+        <rr id="id1" owner="albocha.de" type="NS" val="ns1.ediscom.de."/>
+        <rr id="id2" owner="albocha.de" type="NS" val="ns4.variomedia.de."/>
+        <rr id="id3" owner="albocha.de" type="MX" prio="10" val="webmail.ediscom.de."/>
+        <rr id="id4" owner="albocha.de" type="MX" prio="100" val="mail2.ediscom.de."/>
+        <rr id="id5" owner="albocha.de" type="TXT" val="google-site-verification=..."/>
+        <rr id="id6" owner="albocha.de" type="TXT" val="&quot;v=spf1 ip4:212.204.63.101 -all&quot;"/>
+        <rr id="id7" owner="albocha.de" type="SPF" val="&quot;v=spf1 ip4:212.204.63.101 -all&quot;"/>
+        <rr id="id8" owner="www" type="A" val="212.204.63.101"/>
+        <rr id="id9" owner="www" type="AAAA" val="2001:6f8:132c:100::def1" ttl="300"/>
+        <rr id="id10" owner="ftp" type="CNAME" val="www.albocha.de."/>
+    </zonedata>
+</zone>

@@ -1,13 +1,13 @@
-    <zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse"
-	  file="db.212.204.63">
-      <masters/>
-      <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." 
-		serial="2014010800" refresh="28800" retry="7200" 
-		expire="604800" minimum="86400" ttl="86400" 
-		ttlinfra="172800">
-	<rr id="id1" owner="63.204.212.in-addr.arpa"   type="NS"  val="ns1.ediscom.de." />
-	<rr id="id2" owner="63.204.212.in-addr.arpa"   type="NS"  val="ns4.variomedia.de." />
-	<rr id="id3" owner="1"   type="PTR" val="ediscom.net." />
-	<rr id="id4" owner="101" type="PTR" val="support.syscall.net." />
-      </zonedata>
-    </zone>
+<zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse"
+        file="db.212.204.63">
+    <masters/>
+    <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de."
+            serial="2014010800" refresh="28800" retry="7200"
+            expire="604800" minimum="86400" ttl="86400"
+            ttlinfra="172800">
+        <rr id="id1" owner="63.204.212.in-addr.arpa" type="NS" val="ns1.ediscom.de."/>
+        <rr id="id2" owner="63.204.212.in-addr.arpa" type="NS" val="ns4.variomedia.de."/>
+        <rr id="id3" owner="1" type="PTR" val="ediscom.net."/>
+        <rr id="id4" owner="101" type="PTR" val="support.syscall.net."/>
+    </zonedata>
+</zone>
