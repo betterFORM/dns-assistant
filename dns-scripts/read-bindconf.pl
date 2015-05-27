@@ -4,7 +4,7 @@
 # Olaf Schreck <chakl@syscall.de>, syscall IT GmbH
 
 # Read BIND9 zone config data and zonefiles and write them to STDOUT as an 
-# XML data structure conforming to the zones node in data-samples/data.xml
+# XML data structure conforming to the "zones" node in data-samples/data.xml
 
 
 use strict;
@@ -13,16 +13,29 @@ use warnings;
 use Data::Dumper;
 use Net::DNS::ZoneFile;
 use XML::Simple;
+use Syscall::Util::Log;
 
-my $VERSION = '0.2';
+my $CONF = {
+    debug  => 0,
+    prefix => 'data-samples',
+};
+
+my $RUN = {
+    myname      => 'read-bindconf',
+    version     => '0.3',
+    logfac      => 'daemon',
+};
+
+my $LOG = Syscall::Util::Log->new(Myname => $RUN->{myname}, 
+				  SyslogFacility => $RUN->{logfac})
+    or fatal(1, "failed to create logging handle");
 
 my $ZONES = { 'zones' => [] };
 
-my $zones_in = "data-samples/zones-samplefile";
-my $zonefile_base = "data-samples/";
+my $zones_in = $CONF->{prefix} . '/zones-samplefile';
 
 my $rawzones;
-open(ZF, $zones_in) or die "failed to open zones file: $!";
+open(ZF, $zones_in) or fatal(1, "failed to open $zones_in: $!");
 while (<ZF>) {
     next if /^\s*\/\//;
     next if /^\s*\#/;
@@ -67,7 +80,7 @@ sub parse_zoneconf {
 	$out->{zonetype} = 'forward';
     }
 
-    # fill masters node
+    # parse zone config, fill masters node
     my ($rawmasters, @masters);
     while ($conf) {
 	if ($conf =~ /type\s+(\w+)\s*;/si) {
@@ -92,7 +105,7 @@ sub parse_zoneconf {
 	}
     }
 
-    # fill zonedata element
+    # fill zonedata element from zonefile
     if ($out->{type} eq 'master') {
 	$out->{zonedata} = parse_zonefile($zone, $out->{file});
     }
@@ -104,8 +117,8 @@ sub parse_zoneconf {
 sub parse_zonefile {
     my ($zone, $file) = @_;
     my $out = { rr => [] };
-    my $zfname = ${zonefile_base} . $file;
-    # XXX check err
+    my $zfname = $CONF->{prefix} . '/' . $file;
+    # XXX check err, may croak
     my $zonefile = new Net::DNS::ZoneFile($zfname, $zone);
 
     $out->{ttl} = $zonefile->ttl if $zonefile->ttl;
@@ -128,7 +141,7 @@ sub parse_zonefile {
 		$rrref->{val} = $rr->nsdname;
 	    } elsif ($rr->type eq 'MX') {
 		$rrref->{val} = $rr->exchange;
-		$rrref->{prio} = $rr->reference;
+		$rrref->{prio} = $rr->preference;
 	    } elsif ($rr->type eq 'A') {
 		$rrref->{val} = $rr->address;
 	    } elsif ($rr->type eq 'AAAA') {
@@ -145,7 +158,7 @@ sub parse_zonefile {
 	    } elsif ($rr->type eq 'PTR') {
 		$rrref->{val} = $rr->ptrdname;
 	    } else {
-		print "UNRECOGNIZED RR TYPE: ", $rr->type, "\n";
+		$LOG->warn("unrecognized RR type: ", $rr->type);
 	    }
 	    
 	    push(@{$out->{rr}}, $rrref);
@@ -156,4 +169,11 @@ sub parse_zonefile {
     $out;
 }
 
-#print Dumper($ZONES);
+
+sub fatal {
+    my ($code, $msg) = @_;
+    print STDERR "fatal: $msg\n";
+    $LOG->err("fatal: $msg");
+    exit($code);
+}
+

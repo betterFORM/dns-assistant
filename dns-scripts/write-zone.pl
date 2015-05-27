@@ -7,42 +7,61 @@
 # BIND9 config fragment and zonefile from this data.
 #
 # See data-samples/zonedata-sample*.xml for sample XML data.
-#
-# initial version
 
 
 use strict;
 use warnings;
 
 use Data::Dumper;
+use File::Path qw(make_path);
 use Net::DNS::RR;
 use XML::Simple;
+use Syscall::Util::Log;
 
-my $VERSION = '0.1';
+my $CONF = {
+    debug  => 0,
+    prefix => 'stage',
+};
 
-# directory prefix for created files
-my $PREFIX = 'stage';
+my $RUN = {
+    myname      => 'write-zone',
+    version     => '0.2',
+    logfac      => 'daemon',
+    typeorder   => qw( NS MX A AAAA SPF TXT SRV CNAME PTR ),
+};
 
-# order of record types for nice formatting
-my @TYPEORDER = qw( NS MX A AAAA SPF TXT SRV CNAME PTR );
+my $LOG = Syscall::Util::Log->new(Myname => $RUN->{myname}, 
+				  SyslogFacility => $RUN->{logfac})
+    or fatal(1, "failed to create logging handle");
 
-# parse XML from STDIN
-# exits 255 and with err msg on parse errors, need to catch that correctly
-my $ref = XMLin('-', KeyAttr => {'rr' => 'id'});
+# parse XML from STDIN - need to wrap in eval to guard against parse errors
+my $ref = eval { XMLin('-', KeyAttr => {'rr' => 'id'}); };
+if ($@) {
+    fatal(1, "failed to parse XML from stdin: $@");
+}
 #print Dumper($ref);
 
-my $outconf = $ref->{origin} . '.conf';
-my $outfile = $ref->{file};
+my $outconf = $CONF->{prefix} . '/zones/' . $ref->{origin} . '.conf';
+my $outfile = $CONF->{prefix} . '/' . $ref->{file};
+my @dirs = ($CONF->{prefix} . '/zones', $CONF->{prefix} . '/master');
+# ensure dirs exist - need to wrap in eval to guard against permission issues
+eval { make_path(@dirs); };
+if ($@) {
+    fatal(1, "failed to create dirs (%s): %s", join(" ", @dirs), $@);
+}
 
-create_conf();
+
+create_bindconf();
 create_zonefile() if $ref->{type} eq 'master';
+exit 0;
+
 
 # create BIND9 config fragment for the zone
-sub create_conf {
-    open(CF, ">$PREFIX/$outconf") or die "open conf $outconf: $!";
+sub create_bindconf {
+    open(CF, ">$outconf") or $LOG->err("failed to open file $outconf: $!");
     print CF "zone \"", $ref->{origin}, "\" {\n";
     if ($ref->{type} eq 'master') {
-	print CF "    type master;\n    file \"", $outfile, "\";\n";
+	print CF "    type master;\n    file \"", $ref->{file}, "\";\n";
     }
     if ($ref->{type} eq 'slave') {
 	print CF "    type slave;\n    masters { ";
@@ -56,6 +75,7 @@ sub create_conf {
     }
     print CF "};\n";
     close CF;
+    $LOG->debug("wrote $outconf");
 }
 
 
@@ -91,13 +111,13 @@ sub create_zonefile {
 #    print Dumper($sorthref);
 
     # write zonefile
-    open(OUT, ">$PREFIX/$outfile") or die "open outfile $outfile: $!";
+    open(OUT, ">$outfile") or $LOG->err("failed to open $outfile: $!");
     printf(OUT "\$TTL %d\n\$ORIGIN %s.\n", 
 	   $ref->{zonedata}->{ttl}, $ref->{origin});
     print OUT $soa->string, "\n";
 
     foreach my $o ('_origin', sort grep !/^_/, keys %$sorthref) {
-	foreach my $t (@TYPEORDER) {
+	foreach my $t ($RUN->{typeorder}) {
 	    if (exists $sorthref->{$o}->{$t}) {
 		foreach my $id (@{$sorthref->{$o}->{$t}}) {
 		    print OUT pprint_rr($rrhref->{$id}), "\n";
@@ -108,6 +128,7 @@ sub create_zonefile {
 	$o =~ /^_/ && print OUT "\n";
     }
     close OUT;
+    $LOG->debug("wrote $outfile");
 }
 
 
@@ -150,5 +171,13 @@ sub pprint_rr {
 	$out = $rr->string;
     }
     $out;
+}
+
+
+sub fatal {
+    my ($code, $msg) = @_;
+    print STDERR "fatal: $msg\n";
+    $LOG->err("fatal: $msg");
+    exit($code);
 }
 
