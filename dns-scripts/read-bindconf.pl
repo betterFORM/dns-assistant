@@ -155,6 +155,11 @@ sub parse_zonefile {
 		$rrref->{weight} = $rr->weight;
 		$rrref->{port}   = $rr->port;
 		$rrref->{val}    = $rr->target;
+	    } elsif ($rr->type eq 'TLSA') {
+		$rrref->{val}          = $rr->cert;
+		$rrref->{usage}        = $rr->usage;
+		$rrref->{selector}     = $rr->selector;
+		$rrref->{matchingtype} = $rr->matchingtype;
 	    } elsif ($rr->type eq 'PTR') {
 		$rrref->{val} = $rr->ptrdname;
 	    } else {

@@ -166,6 +166,12 @@ sub pprint_rr {
     } elsif ($type eq 'SPF') {
 	$rr->spfdata($data->{val});
 	$out = $rr->string;
+    } elsif ($type eq 'TLSA') {
+	$rr->cert($data->{val});
+	$rr->usage($data->{usage});
+	$rr->selector($data->{selector});
+	$rr->matchingtype($data->{matchingtype});
+	$out = $rr->string;
     } elsif ($type eq 'PTR') {
 	$rr->ptrdname($data->{val});
 	$out = $rr->string;
