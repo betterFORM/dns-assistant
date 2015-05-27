@@ -14,6 +14,7 @@
 - select a record (for modify etc)
 - add new record
 - delete zone
+- preview generated files
 - configure DNSSEC [later}
 - configure reverse delegation, only if reverse zone [later]
 
