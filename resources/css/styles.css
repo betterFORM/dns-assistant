@@ -13,3 +13,16 @@
   margin-right: 15px;
   margin-top: -2px;
 }
+.xfControl {
+  display: block;
+}
+.xfControl .widgetContainer {
+  display: block;
+}
+.xfControl .xfValue {
+  width: 100%;
+}
+.xfControl label {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
