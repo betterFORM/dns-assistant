@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events"
-      xmlns:xf="http://www.w3.org/2002/xforms" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xf="http://www.w3.org/2002/xforms" lang="en">
     <head>
         <title data-template="config:app-title">App Title</title>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -15,8 +13,7 @@
         <!--<link href="bower_components/materialize/dist/css/materialize.min.css" rel="stylesheet"/>-->
         <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet"/>
         <link href="bower_components/admin-lte/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
-        <link href="bower_components/admin-lte/dist/css/skins/skin-blue-light.min.css" rel="stylesheet"
-              type="text/css"/>
+        <link href="bower_components/admin-lte/dist/css/skins/skin-blue-light.min.css" rel="stylesheet" type="text/css"/>
         <!--<link href="bower_components/animate.css/animate.css" rel="stylesheet"/>-->
         <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
         <!-- /build -->
@@ -55,19 +52,15 @@
                             <zone origin="albocha.de" type="master" zonetype="forward" file="db.albocha.de">
                                 <masters/>
                                 <!-- data from the zonedata tag goes into the zonefile -->
-                                <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." serial="2015010800"
-                                          refresh="28800" retry="7200" expire="604800" minimum="86400" ttl="86400"
-                                          ttlinfra="172800">
+                                <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." serial="2015010800" refresh="28800" retry="7200" expire="604800" minimum="86400" ttl="86400" ttlinfra="172800">
                                     <!-- rr elements need a unique id -->
                                     <rr id="id1" owner="albocha.de" type="NS" val="ns1.ediscom.de."/>
                                     <rr id="id2" owner="albocha.de" type="NS" val="ns4.variomedia.de."/>
                                     <rr id="id3" owner="albocha.de" type="MX" prio="10" val="webmail.ediscom.de."/>
                                     <rr id="id4" owner="albocha.de" type="MX" prio="100" val="mail2.ediscom.de."/>
                                     <rr id="id5" owner="albocha.de" type="TXT" val="google-site-verification=..."/>
-                                    <rr id="id6" owner="albocha.de" type="TXT"
-                                        val="&#34;v=spf1 ip4:212.204.63.101 -all&#34;"/>
-                                    <rr id="id7" owner="albocha.de" type="SPF"
-                                        val="&#34;v=spf1 ip4:212.204.63.101 -all&#34;"/>
+                                    <rr id="id6" owner="albocha.de" type="TXT" val="&#34;v=spf1 ip4:212.204.63.101 -all&#34;"/>
+                                    <rr id="id7" owner="albocha.de" type="SPF" val="&#34;v=spf1 ip4:212.204.63.101 -all&#34;"/>
                                     <rr id="id8" owner="www" type="A" val="212.204.63.101"/>
                                     <rr id="id9" owner="www" type="AAAA" val="2001:6f8:132c:100::def1" ttl="300"/>
                                     <rr id="id10" owner="ftp" type="CNAME" val="www.albocha.de."/>
@@ -85,12 +78,9 @@
                             </zone>
 
                             <!-- a reverse zone.  we are master and have the data -->
-                            <zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse"
-                                  file="db.212.204.63">
+                            <zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse" file="db.212.204.63">
                                 <masters/>
-                                <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." serial="2014010800"
-                                          refresh="28800" retry="7200" expire="604800" minimum="86400" ttl="86400"
-                                          ttlinfra="172800">
+                                <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." serial="2014010800" refresh="28800" retry="7200" expire="604800" minimum="86400" ttl="86400" ttlinfra="172800">
                                     <rr id="id1" owner="63.204.212.in-addr.arpa" type="NS" val="ns1.ediscom.de."/>
                                     <rr id="id2" owner="63.204.212.in-addr.arpa" type="NS" val="ns4.variomedia.de."/>
                                     <rr id="id3" owner="1" type="PTR" val="ediscom.net."/>
@@ -100,7 +90,98 @@
                         </zones>
                     </data>
                 </xf:instance>
+                <xf:instance id="i-zone">
+                    <data xmlns="">
+                        <zone origin="" type="master" zonetype="forward" file="">
+                            <masters>
+                                <master/>
+                            </masters>
+                            <!-- no zonedata, thus no zonefile gets written -->
+                            <zonedata  mname="" rname="" serial="" refresh="" retry="" expire="" minimum="" ttl="" ttlinfra=""/>
+                        </zone>
+                    </data>
+                </xf:instance>
+                <xf:bind ref="instance('i-zone')/zone">
+                    <xf:bind ref="masters" relevant="../@type = 'slave'"/>
+                    <xf:bind ref="zonedata" relevant="../@type='master'"/>
+
+                    <xf:bind ref="@file" calculate="concat(../@type,'/db.', ../@origin)" />
+                </xf:bind>
+                <xf:instance id="i-templates">
+                    <data xmlns="">
+                        <ns></ns>
+                        <rr id="" owner="" type="NS" val=""/>
+                    </data>
+                </xf:instance>
+                <xf:action ev:event="xforms-ready">
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/@mname" value="instance()/defaults/mname"/>
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/@rname" value="instance()/defaults/rname"/>
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/@refresh" value="instance()/defaults/refresh"/>
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/@retry" value="instance()/defaults/retry"/>
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/@expire" value="instance()/defaults/expire"/>
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/@minimum" value="instance()/defaults/minimum"/>
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/@ttl" value="instance()/defaults/ttl"/>
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/@ttlinfra" value="instance()/defaults/ttlinfra"/>
+                    <!-- todo: copy *all* nameservers from defaults    -->
+                    <xf:insert origin="instance('i-templates')/rr" context="instance('i-zone')/zone/zonedata" />
+                    <xf:setvalue ref="instance('i-zone')/zone/zonedata/rr/owner" value=""
+                </xf:action>
             </xf:model>
+        </div>
+        <div id="addZone" class="modal modal-info">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title">New Zone</h4>
+                    </div>
+                    <div class="modal-body">
+                        <xf:group ref="instance('i-zone')">
+                            <xf:action ev:event="insert-zone">
+                                <!-- actions to actually insert the zone into payload -->
+
+                            </xf:action>
+                            <xf:input ref="instance('i-zone')/zone/@origin">
+                                <xf:label>Zone</xf:label>
+                            </xf:input>
+                            <xf:select1 ref="zone/@zonetype" appearance="full">
+                                <xf:label>Zone type</xf:label>
+                                <xf:item>
+                                    <xf:label>forward</xf:label>
+                                    <xf:value>forward</xf:value>
+                                </xf:item>
+                                <xf:item>
+                                    <xf:label>reverse</xf:label>
+                                    <xf:value>reverse</xf:value>
+                                </xf:item>
+                            </xf:select1>
+                            <xf:select1 ref="zone/@type" appearance="full">
+                                <xf:label>Type</xf:label>
+                                <xf:item>
+                                    <xf:label>Master</xf:label>
+                                    <xf:value>master</xf:value>
+                                    <xf:action ev:event="xforms-selected">
+                                        <!-- todo: copy defaults values to template -->
+                                    </xf:action>
+                                </xf:item>
+                                <xf:item>
+                                    <xf:label>Slave</xf:label>
+                                    <xf:value>slave</xf:value>
+                                </xf:item>
+                            </xf:select1>
+                        </xf:group>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-outline pull-left" type="button">Close</button>
+                        <button id="insert-zone" class="btn btn-outline" type="button">
+                            <!-- todo: trigger to insert i-zone into payload instance -->
+
+                            Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
         </div>
         <div class="wrapper">
             <header class="main-header">
@@ -109,8 +190,7 @@
                         <div class="navbar-header">
                             <a href="../../index2.html" class="navbar-brand">
                                 <b>DNS</b> Assistant</a>
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#navbar-collapse">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                                 <i class="fa fa-bars"/>
                             </button>
                         </div>
@@ -191,7 +271,6 @@
                             <div class="box box-default">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Defaults</h3>
-
                                     <div class="box-tools pull-right">
                                         <button data-widget="collapse" class="btn btn-box-tool">
                                             <i class="fa fa-plus"/>
@@ -250,6 +329,15 @@
                                             </div>
                                         </div>
                                     </xf:group>
+                                    <xf:repeat id="r-nameservers" ref="instance()/defaults/nameservers/ns">
+                                        <xf:input ref=".">
+                                            <xf:label>Nameserver</xf:label>
+                                        </xf:input>
+                                    </xf:repeat>
+                                    <xf:trigger class="-btn -btn-primary">
+                                        <xf:label>add</xf:label>
+                                        <xf:insert nodeset="nameservers/ns" origin="instance('i-templates')/ns"/>
+                                    </xf:trigger>
                                 </div>
                                 <!-- /.box-body
                                 <div class="box-footer clearfix"/>
@@ -263,10 +351,9 @@
                             <div class="box box-primary">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Zones</h3>
-
                                     <div class="box-tools pull-right">
                                         <div class="commands">
-                                            <button class="btn btn-default">add a zone</button>
+                                            <button class="btn btn-default" data-toggle="modal" data-target="#addZone">add a zone</button>
                                         </div>
                                         <button data-widget="collapse" class="btn btn-box-tool">
                                             <i class="fa fa-minus"/>
@@ -297,7 +384,6 @@
                             <div class="box box-info collapsed-box">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Help / FAQ</h3>
-
                                     <div class="box-tools pull-right">
                                         <button data-widget="collapse" class="btn btn-box-tool">
                                             <i class="fa fa-plus"/>
@@ -321,17 +407,17 @@
             <footer class="main-footer">
                 <div class="copyright">
                     <p>Copyright eXist-db Project 2014</p>
-                </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
+    </div>
 
 
-        <!-- build:js resources/js/app.min.js -->
-        <script src="bower_components/jquery/dist/jquery.js" type="text/javascript"/>
-        <script src="bower_components/admin-lte/bootstrap/js/bootstrap.js" type="text/javascript"/>
-        <script src="bower_components/admin-lte/dist/js/app.js" type="text/javascript"/>
-        <!--<script src="bower_components/materialize/dist/js/materialize.min.js" type="text/javascript"/>-->
-        <script src="resources/js/app.js" type="text/javascript"/>
-        <!-- /build -->
-    </body>
+    <!-- build:js resources/js/app.min.js -->
+    <script src="bower_components/jquery/dist/jquery.js" type="text/javascript"/>
+    <script src="bower_components/admin-lte/bootstrap/js/bootstrap.js" type="text/javascript"/>
+    <script src="bower_components/admin-lte/dist/js/app.js" type="text/javascript"/>
+    <!--<script src="bower_components/materialize/dist/js/materialize.min.js" type="text/javascript"/>-->
+    <script src="resources/js/app.js" type="text/javascript"/>
+    <!-- /build -->
+</body>
 </html>

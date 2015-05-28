@@ -26,3 +26,12 @@
   margin-top: 10px;
   margin-bottom: 0;
 }
+#addZone .xfValue {
+  color: #333;
+}
+#addZone label {
+  margin-left: 5px;
+}
+#addZone .xfSelectorItem {
+  padding: 10px;
+}
