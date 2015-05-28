@@ -1,0 +1,69 @@
+<data xmlns="">
+    <defaults>
+        <!-- defaults for zone SOA records -->
+        <!-- updated to recommended values for DNSSEC, see
+             http://securityblog.switch.ch/2014/02/06/zone-file-recommendations/ -->
+        <mname>ediscom.de.</mname>
+        <rname>zonemaster.ediscom.de.</rname>
+        <refresh>14400</refresh>
+        <retry>1800</retry>
+        <expire>1209600</expire>
+        <minimum>3600</minimum>
+        <ttl>86400</ttl>
+        <ttlinfra>172800</ttlinfra>
+        <nameservers>
+            <ns>ns1.ediscom.de.</ns>
+            <ns>ns4.variomedia.de.</ns>
+        </nameservers>
+        <!-- additional defaults for common $CUSTOMER tasks -->
+        <evirtual>
+            <www>212.204.63.55</www>
+            <mx>212.204.63.28</mx>
+        </evirtual>
+    </defaults>
+    <zones>
+        <!-- a "normal" (forward) zone. we are authoritative (master), so we
+             have the zone data -->
+        <!-- data from the zone and masters tags goes into BIND config -->
+        <zone origin="albocha.de" type="master" zonetype="forward" file="master/db.albocha.de">
+            <masters/>
+            <!-- data from the zonedata tag goes into the zonefile -->
+            <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." serial="2015010800" refresh="28800" retry="7200" expire="604800" minimum="86400" ttl="86400" ttlinfra="172800">
+                <!-- rr elements need a unique id -->
+                <rr id="id1" owner="albocha.de" type="NS" val="ns1.ediscom.de."/>
+                <rr id="id2" owner="albocha.de" type="NS" val="ns4.variomedia.de."/>
+                <rr id="id3" owner="albocha.de" type="MX" prio="10" val="webmail.ediscom.de."/>
+                <rr id="id4" owner="albocha.de" type="MX" prio="100" val="mail2.ediscom.de."/>
+                <rr id="id5" owner="albocha.de" type="TXT" val="google-site-verification=..."/>
+                <rr id="id6" owner="albocha.de" type="TXT" val="&#34;v=spf1 ip4:212.204.63.101 -all&#34;"/>
+                <rr id="id7" owner="albocha.de" type="SPF" val="&#34;v=spf1 ip4:212.204.63.101 -all&#34;"/>
+                <rr id="id8" owner="www" type="A" val="212.204.63.101"/>
+                <rr id="id9" owner="www" type="AAAA" val="2001:6f8:132c:100::def1" ttl="300"/>
+                <rr id="id10" owner="ftp" type="CNAME" val="www.albocha.de."/>
+            </zonedata>
+        </zone>
+
+        <!-- a "normal" (forward) zone. we are slave and have no zone data.
+             we pull the data from the given masters instead -->
+        <zone origin="schmad.de" type="slave" zonetype="forward" file="">
+            <masters>
+                <master>88.198.171.238</master>
+            </masters>
+            <!-- no zonedata, thus no zonefile gets written -->
+            <zonedata/>
+        </zone>
+
+        <!-- a reverse zone.  we are master and have the data -->
+        <zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse"
+                file="master/db.212.204.63">
+        <zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse" file="db.212.204.63">
+            <masters/>
+            <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." serial="2014010800" refresh="28800" retry="7200" expire="604800" minimum="86400" ttl="86400" ttlinfra="172800">
+                <rr id="id1" owner="63.204.212.in-addr.arpa" type="NS" val="ns1.ediscom.de."/>
+                <rr id="id2" owner="63.204.212.in-addr.arpa" type="NS" val="ns4.variomedia.de."/>
+                <rr id="id3" owner="1" type="PTR" val="ediscom.net."/>
+                <rr id="id4" owner="101" type="PTR" val="support.syscall.net."/>
+            </zonedata>
+        </zone>
+    </zones>
+</data>
