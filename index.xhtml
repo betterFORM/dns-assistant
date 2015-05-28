@@ -49,7 +49,7 @@
                             <!-- a "normal" (forward) zone. we are authoritative (master), so we
                                  have the zone data -->
                             <!-- data from the zone and masters tags goes into BIND config -->
-                            <zone origin="albocha.de" type="master" zonetype="forward" file="db.albocha.de">
+                            <zone origin="albocha.de" type="master" zonetype="forward" file="master/db.albocha.de">
                                 <masters/>
                                 <!-- data from the zonedata tag goes into the zonefile -->
                                 <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." serial="2015010800" refresh="28800" retry="7200" expire="604800" minimum="86400" ttl="86400" ttlinfra="172800">
@@ -78,6 +78,8 @@
                             </zone>
 
                             <!-- a reverse zone.  we are master and have the data -->
+                            <zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse"
+                                  file="master/db.212.204.63">
                             <zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse" file="db.212.204.63">
                                 <masters/>
                                 <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de." serial="2014010800" refresh="28800" retry="7200" expire="604800" minimum="86400" ttl="86400" ttlinfra="172800">
@@ -271,6 +273,7 @@
                             <div class="box box-default">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Defaults</h3>
+
                                     <div class="box-tools pull-right">
                                         <button data-widget="collapse" class="btn btn-box-tool">
                                             <i class="fa fa-plus"/>

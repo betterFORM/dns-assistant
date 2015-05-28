@@ -131,7 +131,7 @@ named "x" type "y" with value(s) "z".
 
 ## Common DNS Record Types
 
-The following are they most common DNS record types:
+The following are the most common DNS record types:
 
 - A: specifies that some DNS name has a certain IPv4 address, usually for a host
 - AAAA: same, but value is an IPv6 address
@@ -141,6 +141,7 @@ The following are they most common DNS record types:
 - TXT: an arbitrary string for various purposes
 - SPF: a string related to anti-spam measures
 - SRV: service location information, often used in Microsoft Windows networks
+- TLSA: representation of a TLS X.509 certificate
 - PTR: reverse IP address to DNS name mapping
 
 There are also a handful of record types for DNSSEC. In our special case, 

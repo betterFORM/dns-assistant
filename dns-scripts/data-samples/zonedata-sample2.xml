@@ -1,5 +1,5 @@
 <zone origin="63.204.212.in-addr.arpa" type="master" zonetype="reverse"
-        file="db.212.204.63">
+        file="master/db.212.204.63">
     <masters/>
     <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de."
             serial="2014010800" refresh="28800" retry="7200"

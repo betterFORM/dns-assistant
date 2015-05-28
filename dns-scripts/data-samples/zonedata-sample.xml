@@ -1,5 +1,5 @@
 <zone origin="albocha.de" type="master" zonetype="forward"
-        file="db.albocha.de">
+        file="master/db.albocha.de">
     <masters/>
     <!-- data from the zonedata tag goes into the zonefile -->
     <zonedata mname="ediscom.de." rname="zonemaster.ediscom.de."
