@@ -10,5 +10,4 @@
     <target>DNSAssistant</target>
     <prepare>pre-install.xql</prepare>
     <finish/>
-    <deployed/>
 </meta>

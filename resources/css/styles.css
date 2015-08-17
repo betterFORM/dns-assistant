@@ -1,5 +1,15 @@
+.content-wrapper {
+  background: #f3f3f3;
+  font-family: Helvetica, Arial, sans-serif;
+}
+header .navbar {
+  background: #333333 !important;
+}
 .navbar-brand {
   white-space: nowrap;
+}
+.content-header {
+  text-align: center;
 }
 #defaults .row {
   margin-bottom: 10px;
@@ -7,6 +17,10 @@
 #defaults input {
   width: 100%;
   margin-top: 10px;
+}
+.box-title {
+  font-family: Georgia;
+  font-style: initial;
 }
 .commands {
   float: left;
@@ -34,4 +48,30 @@
 }
 #addZone .xfSelectorItem {
   padding: 10px;
+}
+h3 {
+  font-style: initial;
+  font-weight: 700;
+}
+.xfRepeat .xfRepeatItem {
+  position: relative;
+}
+.xfRepeat .xfLabel {
+  display: inline;
+}
+.xfRepeat .xfTrigger {
+  position: absolute;
+  top: 9px;
+  right: 5px;
+}
+.xfRepeat .xfTrigger .xfValue {
+  background: transparent;
+  border: none;
+  color: #CC3434;
+}
+.xfRepeat .xfRepeatIndex {
+  background: #5b80b2;
+}
+.add-row {
+  margin-top: 5px;
 }
